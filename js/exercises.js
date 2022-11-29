@@ -1,31 +1,34 @@
 //DAY 6 EXERCISES
 //LEVEL 1 EXERCISES
 //1.
-const countries = [
-  "Albania",
-  "Bolivia",
-  "Canada",
-  "Denmark",
-  "Ethiopia",
-  "Finland",
-  "Germany",
-  "Hungary",
-  "Ireland",
-  "Japan",
-  "Kenya",
-];
+// const countries = [
+//   "Albania",
+//   "Bolivia",
+//   "Canada",
+//   "Denmark",
+//   "Ethiopia",
+//   "Finland",
+//   "Germany",
+//   "Hungary",
+//   "Ireland",
+//   "Japan",
+//   "Kenya",
+// ];
 
-const webTechs = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "React",
-  "Redux",
-  "Node",
-  "MongoDB",
-];
+const { getRandomValues } = require("crypto");
+const { Z_ASCII } = require("zlib");
 
-const mernStack = ["MongoDB", "Express", "React", "Node"];
+// const webTechs = [
+//   "HTML",
+//   "CSS",
+//   "JavaScript",
+//   "React",
+//   "Redux",
+//   "Node",
+//   "MongoDB",
+// ];
+
+// const mernStack = ["MongoDB", "Express", "React", "Node"];
 // for (let i = 0; i < countries.length; i++) {
 //   console.log(countries[i]);
 // }
@@ -140,11 +143,59 @@ const mernStack = ["MongoDB", "Express", "React", "Node"];
 // }
 // console.log(randomNumArray);
 //14.
-for (let i = 0; i <= 4; i++) {
-  if (!(i === randomNumArray.values())) {
-    randomNumArray.push(Math.floor(Math.random() * 11));
-  } else {
-    continue;
-  }
+// let numbers = [];
+// while (numbers.length < 5) {
+//   let randomNumber = Math.ceil(Math.random() * 5);
+//   if (numbers.indexOf(randomNumber) == -1) {
+//     numbers.push(randomNumber);
+//   }
+// }
+// console.log(numbers);
+//15.
+// let string = "1234567890qwertyuiopasdfghjklzxcvbnm";
+// let numbers = [];
+// while (numbers.length < 6) {
+//   let randomNumber = Math.ceil(Math.random() * string.length + 1);
+//   let randomChar = string[randomNumber];
+//   if (numbers.indexOf(randomChar) == -1) {
+//     numbers.push(randomChar);
+//   }
+// }
+// console.log(numbers.join(""));
+//LEVEL 2
+//1.
+// let string = "1234567890qwertyuiopasdfghjklzxcvbnm";
+// let numbers = [];
+// while (numbers.length < Math.floor(Math.random() * string.length) + 5) {
+//   let randomNumber = Math.ceil(Math.random() * string.length + 1);
+//   let randomChar = string[randomNumber];
+//   if (numbers.indexOf(randomChar) == -1) {
+//     numbers.push(randomChar);
+//   }
+// }
+// console.log(numbers.join(""));
+//2.
+// let string = "1234567890abcdef";
+// let numbers = [];
+// while (numbers.length < 6) {
+//   let randomNumber = Math.ceil(Math.random() * string.length);
+//   let randomChar = string[randomNumber];
+//   if (numbers.indexOf(randomChar) == -1) {
+//     numbers.push(randomChar);
+//   }
+// }
+// console.log(`#${numbers.join("")}`);
+//3.
+let numbers = "1234567890";
+let rgb = [];
+while (rgb.length < 9) {
+  let randomNumber = Math.ceil(Math.random() * numbers.length - 1);
+  let randomRGB = numbers[randomNumber];
+  rgb.push(randomRGB);
+  // console.log(randomNumber);
+  // console.log(randomRGB);
 }
-console.log(randomNumArray);
+let joinedRGB = rgb.join("");
+joinedRGB.split(/[\W\S]/);
+
+console.log(`rgb(${joinedRGB})`);
