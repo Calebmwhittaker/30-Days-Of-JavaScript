@@ -311,12 +311,281 @@ const webTechs = [
 // }
 // console.log(reversedFruitArray);
 //16.
-const fullStack = [
-  ["HTML", "CSS", "JS", "React"],
-  ["Node", "Express", "MongoDB"],
+// const fullStack = [
+//   ["HTML", "CSS", "JS", "React"],
+//   ["Node", "Express", "MongoDB"],
+// ];
+// let joinedFullStack = fullStack[0].concat(fullStack[1]);
+// for (const tech of joinedFullStack) {
+//   let upperTech = tech.toUpperCase();
+//   console.log(upperTech);
+// }
+
+//LEVEL 3 EXERCISES
+const countries = [
+  "Afghanistan",
+  "Albania",
+  "Algeria",
+  "Andorra",
+  "Angola",
+  "Antigua and Barbuda",
+  "Argentina",
+  "Armenia",
+  "Australia",
+  "Austria",
+  "Azerbaijan",
+  "Bahamas",
+  "Bahrain",
+  "Bangladesh",
+  "Barbados",
+  "Belarus",
+  "Belgium",
+  "Belize",
+  "Benin",
+  "Bhutan",
+  "Bolivia",
+  "Bosnia and Herzegovina",
+  "Botswana",
+  "Brazil",
+  "Brunei",
+  "Bulgaria",
+  "Burkina Faso",
+  "Burundi",
+  "Cambodia",
+  "Cameroon",
+  "Canada",
+  "Cape Verde",
+  "Central African Republic",
+  "Chad",
+  "Chile",
+  "China",
+  "Colombi",
+  "Comoros",
+  "Congo (Brazzaville)",
+  "Congo",
+  "Costa Rica",
+  "Cote d'Ivoire",
+  "Croatia",
+  "Cuba",
+  "Cyprus",
+  "Czech Republic",
+  "Denmark",
+  "Djibouti",
+  "Dominica",
+  "Dominican Republic",
+  "East Timor (Timor Timur)",
+  "Ecuador",
+  "Egypt",
+  "El Salvador",
+  "Equatorial Guinea",
+  "Eritrea",
+  "Estonia",
+  "Ethiopia",
+  "Fiji",
+  "Finland",
+  "France",
+  "Gabon",
+  "Gambia, The",
+  "Georgia",
+  "Germany",
+  "Ghana",
+  "Greece",
+  "Grenada",
+  "Guatemala",
+  "Guinea",
+  "Guinea-Bissau",
+  "Guyana",
+  "Haiti",
+  "Honduras",
+  "Hungary",
+  "Iceland",
+  "India",
+  "Indonesia",
+  "Iran",
+  "Iraq",
+  "Ireland",
+  "Israel",
+  "Italy",
+  "Jamaica",
+  "Japan",
+  "Jordan",
+  "Kazakhstan",
+  "Kenya",
+  "Kiribati",
+  "Korea, North",
+  "Korea, South",
+  "Kuwait",
+  "Kyrgyzstan",
+  "Laos",
+  "Latvia",
+  "Lebanon",
+  "Lesotho",
+  "Liberia",
+  "Libya",
+  "Liechtenstein",
+  "Lithuania",
+  "Luxembourg",
+  "Macedonia",
+  "Madagascar",
+  "Malawi",
+  "Malaysia",
+  "Maldives",
+  "Mali",
+  "Malta",
+  "Marshall Islands",
+  "Mauritania",
+  "Mauritius",
+  "Mexico",
+  "Micronesia",
+  "Moldova",
+  "Monaco",
+  "Mongolia",
+  "Morocco",
+  "Mozambique",
+  "Myanmar",
+  "Namibia",
+  "Nauru",
+  "Nepal",
+  "Netherlands",
+  "New Zealand",
+  "Nicaragua",
+  "Niger",
+  "Nigeria",
+  "Norway",
+  "Oman",
+  "Pakistan",
+  "Palau",
+  "Panama",
+  "Papua New Guinea",
+  "Paraguay",
+  "Peru",
+  "Philippines",
+  "Poland",
+  "Portugal",
+  "Qatar",
+  "Romania",
+  "Russia",
+  "Rwanda",
+  "Saint Kitts and Nevis",
+  "Saint Lucia",
+  "Saint Vincent",
+  "Samoa",
+  "San Marino",
+  "Sao Tome and Principe",
+  "Saudi Arabia",
+  "Senegal",
+  "Serbia and Montenegro",
+  "Seychelles",
+  "Sierra Leone",
+  "Singapore",
+  "Slovakia",
+  "Slovenia",
+  "Solomon Islands",
+  "Somalia",
+  "South Africa",
+  "Spain",
+  "Sri Lanka",
+  "Sudan",
+  "Suriname",
+  "Swaziland",
+  "Sweden",
+  "Switzerland",
+  "Syria",
+  "Taiwan",
+  "Tajikistan",
+  "Tanzania",
+  "Thailand",
+  "Togo",
+  "Tonga",
+  "Trinidad and Tobago",
+  "Tunisia",
+  "Turkey",
+  "Turkmenistan",
+  "Tuvalu",
+  "Uganda",
+  "Ukraine",
+  "United Arab Emirates",
+  "United Kingdom",
+  "United States",
+  "Uruguay",
+  "Uzbekistan",
+  "Vanuatu",
+  "Vatican City",
+  "Venezuela",
+  "Vietnam",
+  "Yemen",
+  "Zambia",
+  "Zimbabwe",
 ];
-let joinedFullStack = fullStack[0].concat(fullStack[1]);
-for (const tech of joinedFullStack) {
-  let upperTech = tech.toUpperCase();
-  console.log(upperTech);
+//2.
+// let newCountries = [];
+// for (const country of countries) {
+//   newCountries.push(country);
+// }
+// newCountries.sort();
+// console.log(newCountries);
+//4.
+// let landCountries = [];
+// for (const country of countries) {
+//   let isLandCountry = country.includes("land");
+//   if (isLandCountry) {
+//     landCountries.push(country);
+//   } else {
+//     continue;
+//   }
+// }
+// landCountries.sort();
+// console.log(landCountries);
+//5.
+// let maxCountry = [];
+// let count = 0;
+// for (const country of countries) {
+//   if (country.length >= count) {
+//     count = country.length;
+//     maxCountry.push(country);
+//   } else {
+//     continue;
+//   }
+// }
+// maxCountry.reverse();
+// console.log(maxCountry);
+// let newCount = 0;
+// let newMaxCountry = [];
+// for (const country of maxCountry) {
+//   if (country.length >= count) {
+//     count = country.length;
+//     newMaxCountry.push(country);
+//     newMaxCountry.push(country.length);
+//   } else {
+//     continue;
+//   }
+// }
+// console.log(newMaxCountry);
+//7.
+// let fourCountries = [];
+// for (const country of countries) {
+//   if (country.length <= 4) {
+//     fourCountries.push(country);
+//   } else {
+//     continue;
+//   }
+// }
+// console.log(fourCountries);
+//8.
+// let twoWordCountries = [];
+// for (const country of countries) {
+//   if (country.includes(" ")) {
+//     twoWordCountries.push(country);
+//   } else {
+//     continue;
+//   }
+// }
+// console.log(twoWordCountries);
+//9.
+let capitalCountries = [];
+for (const country of countries) {
+  let capitalCountry = country.toUpperCase();
+  capitalCountries.push(capitalCountry);
 }
+capitalCountries.reverse();
+console.log(capitalCountries);
