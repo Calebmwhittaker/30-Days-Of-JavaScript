@@ -15,18 +15,15 @@
 //   "Kenya",
 // ];
 
-const { getRandomValues } = require("crypto");
-const { Z_ASCII } = require("zlib");
-
-// const webTechs = [
-//   "HTML",
-//   "CSS",
-//   "JavaScript",
-//   "React",
-//   "Redux",
-//   "Node",
-//   "MongoDB",
-// ];
+const webTechs = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "React",
+  "Redux",
+  "Node",
+  "MongoDB",
+];
 
 // const mernStack = ["MongoDB", "Express", "React", "Node"];
 // for (let i = 0; i < countries.length; i++) {
@@ -186,16 +183,140 @@ const { Z_ASCII } = require("zlib");
 // }
 // console.log(`#${numbers.join("")}`);
 //3.
-let numbers = "1234567890";
-let rgb = [];
-while (rgb.length < 9) {
-  let randomNumber = Math.ceil(Math.random() * numbers.length - 1);
-  let randomRGB = numbers[randomNumber];
-  rgb.push(randomRGB);
-  // console.log(randomNumber);
-  // console.log(randomRGB);
+// let numbers = "1234567890";
+// let rgb = [];
+// while (rgb.length < 9) {
+//   let randomNumber = Math.ceil(Math.random() * numbers.length - 1);
+//   let randomRGB = numbers[randomNumber];
+//   rgb.push(randomRGB);
+// }
+// let firstSlice = rgb.slice(0, 3).join("");
+// let secondSlice = rgb.slice(3, 6).join("");
+// let thirdSlice = rgb.slice(6, 9).join("");
+// let concatenatedRGB = firstSlice + "," + secondSlice + "," + thirdSlice;
+// console.log(`rgb(${concatenatedRGB})`);
+//4.
+// let upperCountries = [];
+// for (const country of countries) {
+//   let upperCountry = country.toUpperCase();
+//   upperCountries.push(upperCountry);
+// }
+// console.log(upperCountries);
+//5.
+// let countriesLength = [];
+// for (const country of countries) {
+//   let countryLength = country.length;
+//   countriesLength.push(countryLength);
+// }
+// console.log(countriesLength);
+//6.
+// let newCountries = [];
+// for (const country of countries) {
+//   let singleArray = [];
+//   singleArray.push(country);
+//   let upperCountry = country.toUpperCase();
+//   let splicedCountry = upperCountry.slice(0, 3);
+//   singleArray.push(splicedCountry);
+//   let countriesLength = country.length;
+//   singleArray.push(countriesLength);
+//   newCountries.push(singleArray);
+// }
+// console.log(newCountries);
+//7.
+// let landCountries = [];
+// for (const country of countries) {
+//   let isLandCountry = country.includes("land");
+//   if (isLandCountry) {
+//     landCountries.push(country);
+//   } else {
+//     continue;
+//   }
+// }
+// console.log(landCountries);
+//8.
+// let iaCountries = [];
+// for (const country of countries) {
+//   let isIACountry = country.endsWith("ia");
+//   if (isIACountry) {
+//     iaCountries.push(country);
+//   } else {
+//     continue;
+//   }
+// }
+// console.log(iaCountries);
+//9.
+// let count = 0;
+// let maxCountry = null;
+// let longestCountry = [];
+// for (const country of countries) {
+//   if (country.length > count) {
+//     count = country.length;
+//     maxCountry = country;
+//   } else {
+//     continue;
+//   }
+// }
+// longestCountry.push(maxCountry);
+// console.log(longestCountry);
+//10.
+// let fiveCountries = [];
+// for (const country of countries) {
+//   if (country.length == 5) {
+//     fiveCountries.push(country);
+//   } else {
+//     continue;
+//   }
+// }
+// console.log(fiveCountries);
+//11.
+// let longestWord = [];
+// let count = 0;
+// let maxWord = null;
+// for (const webTech of webTechs) {
+//   if (webTech.length > count) {
+//     count = webTech.length;
+//     maxWord = webTech;
+//   } else {
+//     continue;
+//   }
+// }
+// longestWord.push(maxWord);
+// console.log(longestWord);
+//12.
+// let newTechArray = [];
+// for (const webTech of webTechs) {
+//   let singleTechArray = [];
+//   singleTechArray.push(webTech);
+//   singleTechArray.push(webTech.length);
+//   newTechArray.push(singleTechArray);
+// }
+// console.log(newTechArray);
+//13.
+// let mernArray = [];
+// for (const mern of mernStack) {
+//   mernArray.push(mern[0]);
+// }
+// let joinedMernArray = mernArray.join("");
+// console.log(joinedMernArray);
+//14.
+// let newArray = [];
+// for (const webTech of webTechs) {
+//   console.log(webTech);
+// }
+//15.
+// let fruitArray = ["banana", "orange", "mango", "lemon"];
+// let reversedFruitArray = [];
+// for (fruit = fruitArray.length - 1; fruit >= 0; fruit--) {
+//   reversedFruitArray.push(fruitArray[fruit]);
+// }
+// console.log(reversedFruitArray);
+//16.
+const fullStack = [
+  ["HTML", "CSS", "JS", "React"],
+  ["Node", "Express", "MongoDB"],
+];
+let joinedFullStack = fullStack[0].concat(fullStack[1]);
+for (const tech of joinedFullStack) {
+  let upperTech = tech.toUpperCase();
+  console.log(upperTech);
 }
-let joinedRGB = rgb.join("");
-joinedRGB.split(/[\W\S]/);
-
-console.log(`rgb(${joinedRGB})`);
