@@ -163,3 +163,13 @@
 // }
 // console.log(greetings());
 // console.log(greetings("Caleb"));
+
+//ARROW FUNCTIONS WITH DEFAULT PARAMETERS
+// const greetings = (name = "Peter") => `Welcome ${name}!`;
+// console.log(greetings());
+// console.log(greetings("Caleb"));
+
+// const calculateAge = (birthYear, currentYear = new Date().getFullYear()) => {
+//   return currentYear - birthYear;
+// };
+// console.log(calculateAge(1960));
