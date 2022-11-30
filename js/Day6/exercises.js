@@ -87,6 +87,23 @@ const webTechs = [
 //     continue;
 //   }
 // }
+//9.
+// function isPrime(x) {
+//   for (let i = 2; i <= 100; i++) {
+//     for (let j = 2; j <= i; j++) {
+//       if (i * j == x) return false;
+//     }
+//   }
+//   return true;
+// }
+
+// let primeNumbers = [];
+// for (let p = 2; p < 100; p++) {
+//   if (isPrime(p)) {
+//     primeNumbers.push(p);
+//   }
+// }
+// console.log(primeNumbers);
 //10.
 // let count = 0;
 // for (let i = 0; i <= 100; i++) {
