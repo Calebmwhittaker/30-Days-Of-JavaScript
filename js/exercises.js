@@ -102,13 +102,20 @@
     Multiple cases are needed if checking for
     multiple cases */
 //15.
-const findMax = (...args) => {
-  let max = 0;
-  for (const number of args) {
-    if (number > max) {
-      max = number;
-    }
-  }
-  return max;
+// const findMax = (...args) => {
+//   let max = 0;
+//   for (const number of args) {
+//     if (number > max) {
+//       max = number;
+//     }
+//   }
+//   return max;
+// };
+// console.log(findMax(1, 58, 69, 100, 57));
+
+//LEVEL 2 EXERCISES
+const solveLinEquation = (a, b, c) => {
+  let y = `y = ${-a / b}x + ${-c / b}`;
+  return y;
 };
-console.log(findMax(1, 58, 69, 100, 57));
+console.log(solveLinEquation(3, 4, 5));
