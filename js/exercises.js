@@ -114,8 +114,167 @@
 // console.log(findMax(1, 58, 69, 100, 57));
 
 //LEVEL 2 EXERCISES
-const solveLinEquation = (a, b, c) => {
-  let y = `y = ${-a / b}x + ${-c / b}`;
-  return y;
+//1.
+// const solveLinEquation = (a, b, c) => {
+//   let y = `y = ${-a / b}x + ${-c / b}`;
+//   return y;
+// };
+// console.log(solveLinEquation(3, 4, 5));
+//2.
+// const solveQuadratic = (a, b, c) => {
+//   let positiveResult = `x = ${-b / (2 * a)} + ${Math.sqrt(
+//     ((b ** 2 - 4 * a * c) / 2) * a
+//   )}`;
+//   let negativeResult = `x = ${(-b / 2) * a} - ${Math.sqrt(
+//     ((b ** 2 - 4 * a * c) / 2) * a
+//   )}`;
+//   let solution = `${positiveResult} and ${negativeResult}`;
+//   return solution;
+// };
+// console.log(solveQuadratic(1, 3, 1));
+//3.
+// const printArray = (...args) => {
+//   for (const element of args) {
+//     console.log(element);
+//   }
+//   return true;
+// };
+// console.log(printArray(1, 2, 3, 4));
+//4.
+// const showDateTime = () => {
+//   let month = new Date().getMonth();
+//   let day = new Date().getDate();
+//   let year = new Date().getFullYear();
+//   let hours = new Date().getHours();
+//   let minutes = new Date().getMinutes();
+//   switch (true) {
+//     case minutes <= 9 && hours <= 9:
+//       var hoursAndMinutes = `0${hours}:0${minutes}`;
+//       break;
+//     case minutes <= 9 && hours > 9:
+//       var hoursAndMinutes = `${hours}:0${minutes}`;
+//       break;
+//     default:
+//       var hoursAndMinutes = `${hours}:${minutes}`;
+//       break;
+//   }
+//   let dateTime = `${month}/${day}/${year} ${hoursAndMinutes}`;
+//   return dateTime;
+// };
+// console.log(showDateTime());
+//5.
+// const swapValues = (x, y) => {
+//   newX = y;
+//   newY = x;
+//   console.log(newX);
+//   console.log(newY);
+//   return true;
+// };
+// console.log(swapValues(3, 4));
+//6.
+// const reverseArray = (...args) => {
+//   let reversedArray = [];
+//   for (i = args.length - 1; i >= 0; i--) {
+//     reversedArray.push(args[i]);
+//   }
+//   return reversedArray;
+// };
+// console.log(reverseArray(1, 2, 3, 4, 5));
+//7.
+// const capitalizeArray = (...args) => {
+//   for (const element of args) {
+//     var capitalized = element.toUpperCase();
+//     console.log(capitalized);
+//   }
+//   return true;
+// };
+// console.log(capitalizeArray("caleb", "matthew", "whittaker"));
+//8.
+// const addItem = (item) => {
+//   let newArray = [];
+//   newArray.push(item);
+//   return newArray;
+// };
+// console.log(addItem("hello"));
+//9.
+// let array = [1, 2, 3];
+// const removeItems = (index1, index2) => {
+//   array.splice(index1, index2);
+//   console.log(array);
+//   return true;
+// };
+// console.log(removeItems(0, 2));
+//10.
+// const sumOfNumbers = (num1, num2) => {
+//   let sumArray = [];
+//   let sum = 0;
+//   for (i = num1; i <= num2; i++) {
+//     sum += i;
+//   }
+//   sumArray.push(sum);
+//   return sumArray;
+// };
+// console.log(sumOfNumbers(1, 2));
+//11.
+// const sumOfOdds = (num1, num2) => {
+//   let sumArray = [];
+//   let oddSum = 0;
+//   for (i = num1; i <= num2; i++) {
+//     if (!(i % 2 === 0)) {
+//       oddSum += i;
+//     } else {
+//       continue;
+//     }
+//   }
+//   sumArray.push(oddSum);
+//   return sumArray;
+// };
+// console.log(sumOfOdds(5, 10));
+//12.
+// const sumOfEvens = (num1, num2) => {
+//   let sumArray = [];
+//   let evenSum = 0;
+//   for (i = num1; i <= num2; i++) {
+//     if (i % 2 === 0) {
+//       evenSum += i;
+//     } else continue;
+//   }
+//   sumArray.push(evenSum);
+//   return sumArray;
+// };
+// console.log(sumOfEvens(5, 10));
+//13.
+// const numberOfEvensAndOdds = (num1, num2) => {
+//   let evenCount = 0;
+//   let oddCount = 0;
+//   for (i = num1; i <= num2; i++) {
+//     if (i % 2 === 0) {
+//       evenCount += 1;
+//     } else if (!(i % 2 === 0)) {
+//       oddCount += 1;
+//     } else continue;
+//   }
+//   let sentence = `The number of evens are ${evenCount}.\n The number of odds are ${oddCount}`;
+//   return sentence;
+// };
+// console.log(numberOfEvensAndOdds(0, 100));
+//14.
+// const sumOfNumbers = (...args) => {
+//   let sum = 0;
+//   for (const element of args) {
+//     sum += element;
+//   }
+//   return sum;
+// };
+// console.log(sumOfNumbers(1, 2, 3, 4));
+//15.
+const randomUserIp = () => {
+  let randomIpArray = [];
+  for (i = 0; i < 15; i++) {
+    let randomNum = Math.floor(Math.random() * 10);
+    randomIpArray.push(randomNum);
+  }
+  let stringArray = randomIpArray.join(".");
+  return stringArray;
 };
-console.log(solveLinEquation(3, 4, 5));
+console.log(randomUserIp());
