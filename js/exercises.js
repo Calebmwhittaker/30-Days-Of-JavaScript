@@ -268,13 +268,109 @@
 // };
 // console.log(sumOfNumbers(1, 2, 3, 4));
 //15.
-const randomUserIp = () => {
-  let randomIpArray = [];
-  for (i = 0; i < 15; i++) {
-    let randomNum = Math.floor(Math.random() * 10);
-    randomIpArray.push(randomNum);
-  }
-  let stringArray = randomIpArray.join(".");
-  return stringArray;
-};
-console.log(randomUserIp());
+// const randomUserIp = () => {
+//   let arr = [];
+//   for (i = 0; i < 4; i++) {
+//     for (j = 0; j < 3; j++) {
+//       let randomNum = Math.floor(Math.random() * 10);
+//       arr.push(randomNum);
+//     }
+//     arr.push(".");
+//   }
+//   arr.pop();
+//   let joinedArr = arr.join("");
+//   return joinedArr;
+// };
+// console.log(randomUserIp());
+/*When using multiple for loops, you need to
+  specify unique iteration variables */
+//16.
+// const randomMacAddress = () => {
+//   let arr = [];
+//   for (i = 0; i < 6; i++) {
+//     for (j = 0; j < 2; j++) {
+//       let randomNum = Math.floor(Math.random() * 10);
+//       let string = "ABCDEF";
+//       let randomChar = string[Math.floor(Math.floor(Math.random() * 6))];
+//       let randomDec = Math.floor(Math.random() * 2);
+//       if (randomDec === 0) {
+//         randomDec = randomNum;
+//       } else if (randomDec === 1) {
+//         randomDec = randomChar;
+//       }
+//       arr.push(randomDec);
+//     }
+//     arr.push(":");
+//   }
+//   arr.pop();
+//   let joinedArr = arr.join("");
+//   return joinedArr;
+// };
+// console.log(randomMacAddress());
+//17.
+// const randomHexaNumberGenerator = () => {
+//   let randomHexaNumberArray = [];
+//   for (i = 0; i < 3; i++) {
+//     for (j = 0; j < 2; j++) {
+//       let randomNum = Math.floor(Math.random() * 10);
+//       let string = "abcdef";
+//       let randomChar = string[Math.floor(Math.random() * 6)];
+//       let randomDecision = Math.floor(Math.random() * 2);
+//       if (randomDecision === 0) {
+//         randomHexaNumberArray.push(randomNum);
+//       } else if (randomDecision === 1) {
+//         randomHexaNumberArray.push(randomChar);
+//       }
+//     }
+//   }
+//   let joinedArray = randomHexaNumberArray.join("");
+//   return `#${joinedArray}`;
+// };
+// console.log(randomHexaNumberGenerator());
+//18.
+// const userIdGenerator = () => {
+//   let userIdArray = [];
+//   for (i = 0; i < 7; i++) {
+//     let randomNum = Math.floor(Math.random() * 10);
+//     let string = "qwertyuiopasdfghjklzxcvbnm";
+//     let randomChar = string[Math.floor(Math.random() * 26)];
+//     let randomDecision = Math.floor(Math.random() * 2);
+//     if (randomDecision === 0) {
+//       userIdArray.push(randomNum);
+//     } else if (randomDecision === 1) {
+//       userIdArray.push(randomChar);
+//     }
+//   }
+//   let joinedArray = userIdArray.join("");
+//   return joinedArray;
+// };
+// console.log(userIdGenerator());
+
+//LEVEL 3 EXERCISES
+//1.
+// const userIdGenerator = () => {
+//   let numberOfIds = prompt("Enter the number of IDs to be generated:");
+//   let numberOfCharacters = prompt("Enter the number of characters:");
+//   let string = "qwertyuiopasdfghjklzxcvbnm";
+//   for (i = 0; i < numberOfIds; i++) {
+//     let userIdArray = [];
+//     for (j = 0; j < numberOfCharacters; j++) {
+//       let randomNum = Math.floor(Math.random() * 10);
+//       let randomChar = string[Math.floor(Math.random() * 26)];
+//       let randomDecision = Math.floor(Math.random() * 2);
+//       if (randomDecision === 0) {
+//         randomDecision = randomNum;
+//         userIdArray.push(randomDecision);
+//       } else if (randomDecision === 1) {
+//         randomDecision = randomChar;
+//         userIdArray.push(randomDecision);
+//       }
+//     }
+//     let joinedArray = userIdArray.join("");
+//     console.log(joinedArray);
+//     5;
+//   }
+//   return true;
+// };
+// console.log(userIdGenerator());
+//2.
