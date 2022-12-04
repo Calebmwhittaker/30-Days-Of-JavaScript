@@ -374,3 +374,130 @@
 // };
 // console.log(userIdGenerator());
 //2.
+// const rgbColorGenerator = () => {
+//   let rgbColorArray = [];
+//   for (i = 0; i < 3; i++) {
+//     let singleArray = [];
+//     for (j = 0; j < 3; j++) {
+//       let randomNum = Math.floor(Math.random() * 6);
+//       singleArray.push(randomNum);
+//     }
+//     let joinedSingleArray = singleArray.join("");
+//     rgbColorArray.push(joinedSingleArray);
+//   }
+//   let joinedRGBArray = rgbColorArray.join(",");
+//   return `rgb(${joinedRGBArray})`;
+// };
+// console.log(rgbColorGenerator());
+//3.
+// const hexaColorGenerator = () => {
+//   let numberOfHexaCodes = prompt(
+//     "Enter the number of hexacodes to be generated:"
+//   );
+//   for (i = 0; i < numberOfHexaCodes; i++) {
+//     let hexaColorsArray = [];
+//     for (a = 0; a < 3; a++) {
+//       for (j = 0; j < 2; j++) {
+//         let randomNum = Math.floor(Math.random() * 10);
+//         let string = "abcdef";
+//         let randomChar = string[Math.floor(Math.random() * string.length)];
+//         let randomDecision = Math.floor(Math.random() * 2);
+//         if (randomDecision === 0) {
+//           randomDecision = randomNum;
+//           hexaColorsArray.push(randomDecision);
+//         } else if (randomDecision === 1) {
+//           let randomDecision = randomChar;
+//           hexaColorsArray.push(randomDecision);
+//         }
+//       }
+//     }
+//     let joinedArray = hexaColorsArray.join("");
+//     console.log(`#${joinedArray}`);
+//   }
+//   return true;
+// };
+// console.log(hexaColorGenerator());
+//4.
+// const rgbColorGenerator = () => {
+//   let numberOfRGB = prompt("Enter number of RGB color codes to be generated:");
+//   for (a = 0; a < numberOfRGB; a++) {
+//     let rgbColorArray = [];
+//     for (i = 0; i < 3; i++) {
+//       let singleArray = [];
+//       for (j = 0; j < 3; j++) {
+//         let randomNum = Math.floor(Math.random() * 6);
+//         singleArray.push(randomNum);
+//       }
+//       let joinedSingleArray = singleArray.join("");
+//       rgbColorArray.push(joinedSingleArray);
+//     }
+//     let joinedRGBArray = rgbColorArray.join(",");
+//     console.log(`rgb(${joinedRGBArray})`);
+//   }
+//   return true;
+// };
+// console.log(rgbColorGenerator());
+//7.
+// const generateColors = () => {
+//   let selectColor = prompt('Enter either "hexa" or "rgb":');
+//   switch (selectColor) {
+//     case "hexa":
+//       let hexaColorArray = [];
+//       for (i = 0; i < 3; i++) {
+//         for (j = 0; j < 2; j++) {
+//           let randomNum = Math.floor(Math.random() * 10);
+//           let string = "abcdef";
+//           let randomChar = string[Math.floor(Math.random() * 6)];
+//           let randomDecision = Math.floor(Math.random() * 2);
+//           if (randomDecision === 0) {
+//             randomDecision = randomNum;
+//             hexaColorArray.push(randomDecision);
+//           } else if (randomDecision === 1) {
+//             randomDecision = randomChar;
+//             hexaColorArray.push(randomDecision);
+//           }
+//         }
+//       }
+//       let joinedArray = hexaColorArray.join("");
+//       console.log(`#${joinedArray}`);
+//       break;
+//     case "rgb":
+//       let rgbColorArray = [];
+//       for (rgbSet = 0; rgbSet < 3; rgbSet++) {
+//         let singleRGBColorArray = [];
+//         for (rgbChar = 0; rgbChar < 3; rgbChar++) {
+//           if (rgbChar === 0) {
+//             let randomNumber = Math.floor(Math.random() * 3);
+//             singleRGBColorArray.push(randomNumber);
+//           } else {
+//             let randomNum = Math.floor(Math.random() * 6);
+//             singleRGBColorArray.push(randomNum);
+//           }
+//         }
+//         let joinedArray = singleRGBColorArray.join("");
+//         rgbColorArray.push(joinedArray);
+//       }
+//       let rgbColorArrayJoined = rgbColorArray.join(",");
+//       console.log(`rgb(${rgbColorArrayJoined})`);
+//       break;
+//     default:
+//       console.log('Please type either "hexa" or "rgb" in lowercase');
+//       break;
+//   }
+//   return true;
+// };
+// console.log(generateColors());
+//8.
+const shuffleArray = (...args) => {
+  for (let i = args.length - 1; i > 0; i--) {
+    let randomIndex = Math.floor(Math.random() * (i + 1));
+    let temp = args[i]; //args[3]
+    //Sets a temporary reference value from the current array
+    args[i] = args[randomIndex]; //args[3] = args[2]
+    //Sets the value of the current index to a random value in the array
+    args[randomIndex] = temp; //2 = args[3]
+    //Will never return a repeat value
+  }
+  return args;
+};
+console.log(shuffleArray(1, 2, 3, 4));
