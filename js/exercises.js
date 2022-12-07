@@ -488,16 +488,115 @@
 // };
 // console.log(generateColors());
 //8.
-const shuffleArray = (...args) => {
-  for (let i = args.length - 1; i > 0; i--) {
-    let randomIndex = Math.floor(Math.random() * (i + 1));
-    let temp = args[i]; //args[3]
-    //Sets a temporary reference value from the current array
-    args[i] = args[randomIndex]; //args[3] = args[2]
-    //Sets the value of the current index to a random value in the array
-    args[randomIndex] = temp; //2 = args[3]
-    //Will never return a repeat value
-  }
-  return args;
-};
-console.log(shuffleArray(1, 2, 3, 4));
+// const shuffleArray = (...args) => {
+//   for (let i = args.length - 1; i > 0; i--) {
+//     let randomIndex = Math.floor(Math.random() * (i + 1));
+//     let temp = args[i]; //args[3]
+//     //Sets a temporary reference value from the current array
+//     args[i] = args[randomIndex]; //args[3] = args[2]
+//     //Sets the value of the current index to a random value in the array
+//     args[randomIndex] = temp; //2 = args[3]
+//     //Will never return a repeat value
+//   }
+//   return args;
+// };
+// console.log(shuffleArray(1, 2, 3, 4));
+//9.
+// const calculateFactorial = (number) => {
+//   let factorial = 1;
+//   for (i = number; i > 0; i--) {
+//     factorial *= i;
+//   }
+//   return factorial;
+// };
+// console.log(calculateFactorial(4));
+//10.
+// const isEmpty = (param) => {
+//   if (!param) {
+//     return "Is empty";
+//   }
+//   return "Is NOT empty";
+// };
+// console.log(isEmpty(3));
+//11.
+// const sum = (...args) => {
+//   let sum = 0;
+//   for (const element of args) {
+//     sum += element;
+//   }
+//   return sum;
+// };
+// console.log(sum(1, 2, 3, 4));
+//12.
+// const sumOfArrayItems = (...args) => {
+//   let sum = 0;
+//   for (const element of args) {
+//     if (element % 1 === 0) {
+//       sum += element;
+//     } else {
+//       return "Only integer values";
+//     }
+//   }
+//   return sum;
+// };
+// console.log(sumOfArrayItems(1, 2, "hi", 4));
+//13.
+// const average = (...args) => {
+//   let sum = 0;
+//   let count = 0;
+//   for (const element of args) {
+//     if (element % 1 === 0) {
+//       sum += element;
+//       count += 1;
+//     } else {
+//       return "Only integer values";
+//     }
+//   }
+//   return sum / count;
+// };
+// console.log(average(1, 2, 3));
+//14.
+// const modifyArray = (...args) => {
+//   let modifiedArray = [];
+//   if (args.length >= 5) {
+//     for (const element of args) {
+//       if (element === args[4]) {
+//         let modifiedElement = element.toUpperCase();
+//         modifiedArray.push(modifiedElement);
+//       } else {
+//         modifiedArray.push(element);
+//       }
+//     }
+//   } else {
+//     return "Array is too short";
+//   }
+//   return modifiedArray;
+// };
+// console.log(
+//   modifyArray("hi", "hello", "bonjour", "hola", "konichiwa", "jambo")
+// );
+//15.
+// const isPrime = (number) => {
+//   for (i = number; i > 1; i--) {
+//     for (j = number; j > 1; j--) {
+//       if (i * j === number) {
+//         return "Is NOT prime";
+//       }
+//     }
+//   }
+//   return "Is Prime";
+// };
+// console.log(isPrime(11));
+//16.
+// const isUnique = (...args) => {
+//   let uniqueArray = [];
+//   for (i = 0; i < args.length; i++) {
+//     if (!uniqueArray.includes(args[i])) {
+//       uniqueArray.push(args[i]);
+//     } else {
+//       continue;
+//     }
+//   }
+//   return uniqueArray;
+// };
+// console.log(isUnique(1, 2, 3, 4, 3, 5));
