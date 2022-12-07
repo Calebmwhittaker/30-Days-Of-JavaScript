@@ -113,6 +113,8 @@
 // };
 // console.log(findMax(1, 58, 69, 100, 57));
 
+const { start } = require("repl");
+
 //LEVEL 2 EXERCISES
 //1.
 // const solveLinEquation = (a, b, c) => {
@@ -600,3 +602,30 @@
 //   return uniqueArray;
 // };
 // console.log(isUnique(1, 2, 3, 4, 3, 5));
+//17.
+// const checkUniqueArray = (...args) => {
+//   let uniqueArray = [];
+//   let startType = undefined;
+//   for (const element of args) {
+//     let elementType = typeof element;
+//     if (startType === undefined || elementType === startType) {
+//       startType = elementType;  /*Don't initialize variables that you wish to modify within a loop */
+//       uniqueArray.push(element);
+//     } else {
+//       return "Array items are not the same type";
+//     }
+//   }
+//   return uniqueArray;
+// };
+// console.log(checkUniqueArray(1, 2, 3));
+//18.
+// const isValidVariable = (variable) => {
+//   if (
+//     variable.match(/[\!\@\#\%\^\&\*\)\(\+\=\.\<\>\{\}\[\]\:\;\'\"\|\~\`\-]/g)
+//   ) {
+//     return false;
+//   } else {
+//     return true;
+//   }
+// };
+// console.log(isValidVariable("xas344545-"));
