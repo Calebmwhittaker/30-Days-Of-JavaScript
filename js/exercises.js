@@ -425,34 +425,34 @@ const products = [
 //   }
 // };
 // console.log(signIn("Asab"));
-const averageRating = () => {
-  const copyProducts = Object.assign({}, products);
-  for (const product in copyProducts) {
-    let sum = 0;
-    let count = 0;
-    if (Object.hasOwnProperty.call(copyProducts, product)) {
-      const ratings = copyProducts[product].ratings;
-      const productName = copyProducts[product].name;
-      for (const element of ratings) {
-        for (const index in element) {
-          if (Object.hasOwnProperty.call(element, index)) {
-            const rate = element[index];
-            if (typeof rate === "number") {
-              sum += rate;
-              count += 1;
-            }
-          }
-        }
-      }
-      if (sum === 0 || count === 0) {
-        continue;
-      } else {
-        const average = sum / count;
-        // console.log(average);
-        console.log(`The average rating for a ${productName} is ${average}`);
-      }
-    }
-  }
-  return true;
-};
-console.log(averageRating());
+// const averageRating = () => {
+//   const copyProducts = Object.assign({}, products);
+//   for (const product in copyProducts) {
+//     let sum = 0;
+//     let count = 0;
+//     if (Object.hasOwnProperty.call(copyProducts, product)) {
+//       const ratings = copyProducts[product].ratings;
+//       const productName = copyProducts[product].name;
+//       for (const element of ratings) {
+//         for (const index in element) {
+//           if (Object.hasOwnProperty.call(element, index)) {
+//             const rate = element[index];
+//             if (typeof rate === "number") {
+//               sum += rate;
+//               count += 1;
+//             }
+//           }
+//         }
+//       }
+//       if (sum === 0 || count === 0) {
+//         continue;
+//       } else {
+//         const average = sum / count;
+//         // console.log(average);
+//         console.log(`The average rating for a ${productName} is ${average}`);
+//       }
+//     }
+//   }
+//   return true;
+// };
+// console.log(averageRating());
