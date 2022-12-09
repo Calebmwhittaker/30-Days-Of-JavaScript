@@ -425,6 +425,7 @@ const products = [
 //   }
 // };
 // console.log(signIn("Asab"));
+//3.
 // const averageRating = () => {
 //   const copyProducts = Object.assign({}, products);
 //   for (const product in copyProducts) {
@@ -456,3 +457,21 @@ const products = [
 //   return true;
 // };
 // console.log(averageRating());
+//4.
+// const likeProduct = () => {
+//   const copyProducts = Object.assign({}, products);
+//   for (const product in copyProducts) {
+//     const productObject = copyProducts[product];
+//     const productLikes = productObject.likes;
+//     const joinedProductLikes = productLikes.join(", ");
+//     if (joinedProductLikes.match(/[a-z]/)) {
+//       productLikes.pop();
+//       console.log(productLikes);
+//     } else {
+//       productLikes.push("fg12cy");
+//       console.log(productLikes);
+//     }
+//   }
+//   return true;
+// };
+// console.log(likeProduct());
