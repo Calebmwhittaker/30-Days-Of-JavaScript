@@ -61,19 +61,34 @@ const languages = [
   "English",
   "French",
 ];
-const langSet = new Set(languages);
-console.log(langSet);
-// console.log(langSet.size);
+// const langSet = new Set(languages);
+// console.log(langSet);
+// // console.log(langSet.size);
 
-const counts = [];
-const count = {};
-for (const l of langSet) {
-  const filteredLang = languages.filter((lng) => lng === l);
-  console.log(filteredLang);
-  counts.push({ lang: l, count: filteredLang.length });
-}
-console.log(counts);
+// const counts = [];
+// const count = {};
+// for (const l of langSet) {
+//   const filteredLang = languages.filter((lng) => lng === l);
+//   console.log(filteredLang);
+//   counts.push({ lang: l, count: filteredLang.length });
+// }
+// console.log(counts);
 
-const numbers = [5, 3, 2, 5, 5, 9, 4, 5];
-const setOfNumbers = new Set(numbers);
-console.log(setOfNumbers);
+// const numbers = [5, 3, 2, 5, 5, 9, 4, 5];
+// const setOfNumbers = new Set(numbers);
+// console.log(setOfNumbers);
+
+//Union of Sets
+/*To find a union of two sets you can use a spread operator */
+let a = [1, 2, 3, 4, 5];
+let b = [3, 4, 5, 6];
+let c = [...a, ...b];
+
+// let A = new Set(a);
+// let B = new Set(b);
+let C = new Set(c);
+
+console.log(C);
+
+//Difference of Sets
+/*You can find the difference between sets by using filter */

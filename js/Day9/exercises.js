@@ -2206,6 +2206,37 @@ const countriesSentence = northEuropeanCountries.reduce((acc, cur) => {
 //   .reduce((acc, curr) => acc + curr);
 // console.log(totalPriceOfProducts);
 /*Adds up all the prices of the products */
+//2.
+// const mapOfLanguages = countries
+//   .map((country) => country.languages)
+//   .reduce((acc, cur) => acc.concat(cur), []);
+// const setOfLanguages = new Set(mapOfLanguages);
+
+// let counts = [];
+
+// for (const l of setOfLanguages) {
+//   const filteredLang = mapOfLanguages.filter((lang) => lang === l);
+//   counts.push({ lang: l, count: filteredLang.length });
+// }
+
+// const topN = (arr, n) => {
+//   if (n > arr.length) {
+//     return false;
+//   }
+//   return (
+//     arr
+//       /*You can return the array so that you can use
+//     methods on it in the middle of a function */
+//       .sort((a, b) => {
+//         return b.count - a.count;
+//       })
+//       .slice(0, n)
+//   );
+
+//   /*You needed to use the slice method to get the
+//       first ten languages this whole time */
+// };
+// console.log(topN(counts, 10));
 //3.
 // const categorizeCountries = countries
 //   .map((country) => country.name)
@@ -2213,7 +2244,18 @@ const countriesSentence = northEuropeanCountries.reduce((acc, cur) => {
 //     return countryName.endsWith("land");
 //   });
 // console.log(categorizeCountries);
-
+//4.
+// const getFirstTenCountries = countries.map((country) => country.name[0]);
+// const setOfCountryLetters = new Set(getFirstTenCountries);
+// // console.log(setOfCountryLetters);
+// let counts = [];
+// for (const letter of setOfCountryLetters) {
+//   let filteredLetters = getFirstTenCountries.filter((l) => l === letter);
+//   counts.push({ letter: letter, count: filteredLetters.length });
+// }
+// counts.sort((a, b) => b.count - a.count);
+// let sliceArray = counts.slice(0, 10);
+// console.log(sliceArray);
 //5.
 // const getFirstTenCountries = countries
 //   .slice(0, 10)
@@ -2224,7 +2266,17 @@ const countriesSentence = northEuropeanCountries.reduce((acc, cur) => {
 //   .slice(countries.length - 10, countries.length)
 //   .map((country) => country.name);
 // console.log(getLastTenCountries);
-
+// //7.
+const sortedMapOfCountryNames = countries.map((country) => country.name).sort();
+const firstLetterOfCountryNames = sortedMapOfCountryNames.map(
+  (letter) => letter[0]
+);
+let counts = [];
+const setOfLetters = new Set(firstLetterOfCountryNames);
+for (const letter of setOfLetters) {
+  counts.push({ letter: letter });
+}
+console.log(counts);
 //Level 3 Exercises
 //1.
 // const sortCountriesByName = countries.map((country) => country.name).sort();
