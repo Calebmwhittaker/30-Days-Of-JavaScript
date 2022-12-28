@@ -80,15 +80,71 @@ const languages = [
 
 //Union of Sets
 /*To find a union of two sets you can use a spread operator */
-let a = [1, 2, 3, 4, 5];
-let b = [3, 4, 5, 6];
-let c = [...a, ...b];
+// let a = [1, 2, 3, 4, 5];
+// let b = [3, 4, 5, 6];
+// let c = [...a, ...b];
 
 // let A = new Set(a);
 // let B = new Set(b);
-let C = new Set(c);
+// let C = new Set(c);
 
-console.log(C);
+// console.log(C);
 
 //Difference of Sets
 /*You can find the difference between sets by using filter */
+// let a = [1, 2, 3, 4, 5];
+// let b = [3, 4, 5, 6];
+
+// let A = new Set(a)
+// let B = new Set(b);
+
+// let c = a.filter((num) => !B.has(num));
+// let C = new Set(c);
+// console.log(C);
+//The filter method ONLY works on arrays, NOT sets; therefore, you need to use the array and not the set to filter out the values from the array
+
+//MAP
+//Creating an empty map
+// const map = new Map();
+// console.log(map);
+
+//Creating a map from an array
+// countries = [
+//   ["Finland", "Helsinki"],
+//   ["Sweden", "Stockholm"],
+//   ["Norway", "Oslo"],
+// ];
+
+// const map = new Map(countries);
+// console.log(map);
+// console.log(map.size);
+
+//Adding values to the Map
+// const countriesMap = new Map();
+// console.log(countriesMap.size);
+// countriesMap.set("Finland", "Helsinki");
+// console.log(countriesMap);
+
+//Maps are objects; therefore, they have key-value pairs
+// const countriesMap = new Map();
+// countriesMap.set("Finland", "Helsinki");
+// console.log(countriesMap.get("Finland"));
+//Gets keys and returns their values
+//CANNOT get values and return keys
+
+//Checking Key in Map
+/*You can check if a key exists in a map using the 'has' method */
+/*Returns a boolean value */
+// const countriesMap = new Map();
+// countriesMap.set("Finland", "Helsinki");
+// console.log(countriesMap.has("Finland"));
+
+// for (const country of countriesMap) {
+//   console.log(country);
+// }
+/*Returns the result as an array */
+
+// for (const [country, city] of countriesMap) {
+//   console.log(country, city);
+// }
+/*Returns the result as a string */
