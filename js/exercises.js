@@ -2,6 +2,7 @@
 //Level 1
 const a = [4, 5, 8, 9];
 const b = [3, 4, 5, 7];
+import { count } from "console";
 // const countries = ["Finland", "Sweden", "Norway"];
 //1.
 // const emptySet = new Set();
@@ -51,24 +52,47 @@ const b = [3, 4, 5, 7];
 //Level 3
 import { countries } from "../modules/countries.js";
 //1.
-const languages = countries.map((country) => country.languages);
-const languagesArray = [];
-for (const language of languages) {
-  if (language.length > 1) {
-    for (const single of language) {
-      languagesArray.push(single);
-    }
-  } else {
-    const string = language.toString();
-    languagesArray.push(string);
-  }
-}
-// console.log(languages);
+// const languages = countries.map((country) => country.languages);
+// const languagesArray = [];
+// for (const language of languages) {
+//   if (language.length > 1) {
+//     for (const single of language) {
+//       languagesArray.push(single);
+//     }
+//   } else {
+//     const string = language.toString();
+//     languagesArray.push(string);
+//   }
+// }
+// // console.log(languages);
 // console.log(languagesArray);
-const languagesSet = new Set(languagesArray);
-console.log(languagesSet);
-console.log(languagesSet.size);
+// const languagesSet = new Set(languagesArray);
+// console.log(languagesSet);
+// console.log(languagesSet.size);
 // const languagesMap = new Map(languages);
 // console.log(languagesMap);
 
 //2.
+// const languages = countries.map((country) => country.languages);
+// const languageArray = [];
+// for (const language of languages) {
+//   if (language.length > 1) {
+//     for (const single of language) {
+//       languageArray.push(single);
+//     }
+//   } else {
+//     const string = language.toString();
+//     languageArray.push(string);
+//   }
+// }
+// const languageMap = new Map();
+// for (const language of languageArray) {
+//   if (!languageMap.has(language)) {
+//     languageMap.set(language, 1);
+//   } else {
+//     languageMap.set(language, languageMap.get(language) + 1);
+//   }
+// }
+// const sorted = [...languageMap].sort((a, b) => (a[1] > b[1] ? -1 : 1));
+// const spliced = sorted.splice(0, 10);
+// console.log(spliced);
