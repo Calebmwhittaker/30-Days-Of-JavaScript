@@ -237,7 +237,7 @@ therefore, you can get the rest of the array using the spread operator */
 // console.log(copiedUser);
 
 //Spread Operator with Arrow Function
-/*If you use a spread operator as a parameter for an arrow functionm the argument passed when the function is invoked will change to an array */
+/*If you use a spread operator as a parameter for an arrow function the argument passed when the function is invoked will change to an array */
 
 // const sumAllNums = (...args) => {
 //   let sum = 0;
