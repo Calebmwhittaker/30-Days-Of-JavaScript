@@ -50,7 +50,7 @@ import { count } from "console";
 // console.log(C);
 
 //Level 3
-import { countries } from "../modules/countries.js";
+import { countries } from "../../modules/countries.js";
 //1.
 // const languages = countries.map((country) => country.languages);
 // const languagesArray = [];
@@ -96,3 +96,4 @@ import { countries } from "../modules/countries.js";
 // const sorted = [...languageMap].sort((a, b) => (a[1] > b[1] ? -1 : 1));
 // const spliced = sorted.splice(0, 10);
 // console.log(spliced);
+console.log(countries);
