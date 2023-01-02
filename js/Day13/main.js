@@ -175,9 +175,12 @@
 /*console.count prints the number of times it is called */
 /*It takes a string as a label parameter */
 /*Helpful to count the number of times a function is called */
-const func = () => {
-  console.count("Function has been called");
-};
-func();
-func();
-func();
+// const func = () => {
+//   console.count("Function has been called");
+// };
+// func();
+// func();
+// func();
+
+//console.clear()
+/*Clears the browser console */
