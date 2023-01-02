@@ -1,164 +1,183 @@
-//DAY 12 LESSON
-//Regular Expressions
-/*RegEx is a small programming language that helps to find patterns in data */
-/*The syntax to start a RegEx is to use two forward slashes ('//') */
+//DAY 13 LESSON
+//Console Object Methods
+/*Use document.write() to show output on the browser document
+    Used for testing and debugging */
+/*Use document.getElementById() when you want to interact with the DOM  */
 
-//RegEx Parameters
-/*RegEx takes two parameters: Search pattern and an optional flag */
-/*A pattern can be a text or any form of pattern */
-/*Flags are optional parameters in a RegEx and determines the type of searching */
-/*g: A global flag which looks for a pattern in a whole text */
-/*i: A case-sensitive flag (Searches for lowercase and uppercase) */
-/*m: Multiline flag */
+//console.log()
+/*Use console.log() to show output on the browser console */
 
-//Creating a Pattern with RegEx Constructor
-/*Declaring RegEx without global flag */
-// let pattern = "love";
-// let RegEx = new RegExp(pattern);
-// console.log(RegEx);
-// console.log("hi");
+//console.warn()
+/*Use console.warn() to give warning in the browser
+    Can be used to warn a user of a deprecated version of a package or bad practices*/
 
-/*Declaring RegEx with global flag */
-// let pattern = "love";
-// let flag = "gi";
-// let RegEx = new RegExp(pattern, flag);
-// console.log(RegEx);
+//console.error();
+/*Use console.error() to show error messages */
 
-/*Declaring a RegEx object with the pattern and flag inside the RegExp constructor */
-// let RegEx = new RegExp("love", "gi");
-// console.log(RegEx);
+//console.table()
+/*Use console.table() to display data as a table in the console */
+/*The argument must be an array or and object with and additional opitional parameter columns */
+// const names = ["Asabeneh", "Brook", "David", "John"];
+// console.table(names);
+// const user = {
+//   name: "Asabeneh",
+//   title: "Programmer",
+//   country: "Finland",
+//   city: "Helsinki",
+//   age: 250,
+// };
+// console.table(user);
+// const countries = [
+//   ["Finland", "Helsinki"],
+//   ["Sweden", "Stockholm"],
+//   ["Norway", "Oslo"],
+// ];
+// console.table(countries);
+// const users = [
+//   {
+//     name: "Asabeneh",
+//     title: "Programmer",
+//     country: "Finland",
+//     city: "Helsinki",
+//     age: 250,
+//   },
+//   {
+//     name: "Eyob",
+//     title: "Teacher",
+//     country: "Sweden",
+//     city: "London",
+//     age: 25,
+//   },
+//   {
+//     name: "Asab",
+//     title: "Instructor",
+//     country: "Norway",
+//     city: "Oslo",
+//     age: 22,
+//   },
+//   {
+//     name: "Matias",
+//     title: "Developer",
+//     country: "Denmark",
+//     city: "Copenhagen",
+//     age: 28,
+//   },
+// ];
+// console.table(users);
 
-//Creating a pattern without RegExp Constructor
-/*Declaring RegEx with global and case-sensitive flag */
-// let regEx = new RegExp(/love/gi);
-// console.log(regEx);
+//console.time()
+/*Starts a timer that can be used to track how long an operation takes to complete */
+/*Each timer must have a unique name */
+/*You can have up to 10,000 timers running at the same time*/
+/*When you call console.timeEnd, the browser will output the time in milliseconds that elapsed since the timer was started */
 
-//RegExp Object Methods
-/*Testing for a match */
-/*test(): A method that tests for a match in a string; returns true or false */
-// const str = "I love JavaScript";
-// const pattern = /love/;
-// const result = pattern.test(str);
-// console.log(result);
-/*Tests to see if the pattern is found in the str */
+// const countries = [
+//   ["Finland", "Helsinki"],
+//   ["Sweden", "Stockholm"],
+//   ["Norway", "Oslo"],
+// ];
 
-//Array Containing all of the Match
-/*match(): A method that return an array containing all of the matches */
-// const str = "I love JavaScript";
-// const pattern = /love/gi;
-// const result = str.match(pattern);
-// console.log(result);
+// console.time("Regular for loop");
+// for (let i = 0; i < countries.length; i++) {
+//   console.log(countries[i][0], countries[i][1]);
+// }
+// console.timeEnd("Regular for loop");
 
-/*search(): A method that tests for a match in a string; returns the index of the match or -1 if the search fails */
-// const str = "I love JavaScript";
-// const pattern = /love/g;
-// const result = str.search(pattern);
-// console.log(result);
+// console.time("for Of Loop");
+// for (const [country, city] of countries) {
+//   console.log(country, city);
+// }
+// console.timeEnd("for Of Loop");
+// /*For of loops are faster than traditional for loops when the data set is small*/
+// console.time("forEach loop");
+// const countriesArray = countries.forEach(([country, city]) =>
+//   console.log(country, city)
+// );
+// console.timeEnd("forEach loop");
+/*For of loops are marginally faster than forEach loops as well */
 
-/*Replacing a Substring */
-/*replace(): A method that executes a search for a match in a string and replaces the matched substring with a replacement substring */
-// const txt =
-//   "Python is the most beautiful language that a human begin has ever created.\
-// I recommend python for a first programming language";
-// const matchReplaced = txt.replace(/python/gi, "JavasScript");
-// console.log(matchReplaced);
+//console.info()
+/*console.info() displays information in the browser's console */
+// console.info("Hello");
 
-// const txt =
-//   "%I a%m te%%a%%che%r% a%n%d %% I l%o%ve te%ach%ing.\
-// T%he%re i%s n%o%th%ing as m%ore r%ewarding a%s e%duc%at%i%ng a%n%d e%m%p%ow%er%ing \
-// p%e%o%ple.\
-// I fo%und te%a%ching m%ore i%n%t%er%%es%ting t%h%an any other %jobs.\
-// D%o%es thi%s m%ot%iv%a%te %y%o%u to b%e a t%e%a%cher.";
-// const matches = txt.replace(/%/g, "");
-// console.log(matches);
+//console.assert();
+/*console.assert() writes an error message to the console if the assertion is false */
+/*If the assertion is true, nothing happens */
+/*Takes two parameters: The assertion expression and the failed message to be displayed */
+// console.assert(4 > 3, "4 is greater than 3"); //Nothing happens since the expression is true
+// console.assert(3 > 4, "3 is NOT greater than 4"); //Prints an error message into the console
 
-//Square Bracket
-/*Includes lowercase and uppercase */
-// const pattern = "[Aa]pple";
-// const txt =
-//   "Apple and Banana are fruits. An old cliche says an apple a day keeps the  doctor way has been replaced by a banana a day keeps the doctor far far away. ";
-// const matches = txt.match(pattern);
+// for (let i = 0; i < 10; i++) {
+//   let errorMessage = `${i} is NOT even`;
+//   console.log(i);
+//   console.assert(i % 2 === 0, { number: i, errorMessage: errorMessage });
+// }
 
-// console.log(matches);
+//console.group()
+/*The console.group() can help to group different log groups */
+// const names = ["Asabeneh", "Brook", "David", "John"];
+// const countries = [
+//   ["Finland", "Helsinki"],
+//   ["Sweden", "Stockholm"],
+//   ["Norway", "Oslo"],
+// ];
+// const user = {
+//   name: "Asabeneh",
+//   title: "Programmer",
+//   country: "Finland",
+//   city: "Helsinki",
+//   age: 250,
+// };
+// const users = [
+//   {
+//     name: "Asabeneh",
+//     title: "Programmer",
+//     country: "Finland",
+//     city: "Helsinki",
+//     age: 250,
+//   },
+//   {
+//     name: "Eyob",
+//     title: "Teacher",
+//     country: "Sweden",
+//     city: "London",
+//     age: 25,
+//   },
+//   {
+//     name: "Asab",
+//     title: "Instructor",
+//     country: "Norway",
+//     city: "Oslo",
+//     age: 22,
+//   },
+//   {
+//     name: "Matias",
+//     title: "Developer",
+//     country: "Denmark",
+//     city: "Copenhagen",
+//     age: 28,
+//   },
+// ];
+// console.group("Names");
+// console.log(names);
+// console.groupEnd();
 
-// const pattern = /[Aa]pple/g;
-// const txt =
-//   "Apple and banana are fruits. An old cliche says an apple a day a doctor way has been replaced by a banana a day keeps the doctor far far away. ";
-// const matches = txt.match(pattern);
-// console.log(matches);
+// console.group("Countries");
+// console.log(countries);
+// console.groupEnd();
 
-//Escape Character in RegExp
-// const pattern = /\d/g;
-// const txt = "This regular expression example was made in January 12,  2020.";
-// const matches = txt.match(pattern);
-// console.log(matches);
-/*The \d is a special character that means digits */
+// console.group("Users");
+// console.log(user);
+// console.log(users);
+// console.groupEnd();
 
-//One or more Times(+)
-// const pattern = /\d+/g;
-// const txt = "This regular expression example was made in January 12,  2020.";
-// const matches = txt.match(pattern);
-// console.log(matches);
-/*Pulls all the digits out until it encounters a non-digit value and then places a space between the sets of digits */
-
-//Period
-// const pattern = /[a].+/gi;
-// const txt = "Apple and banana are fruits";
-// const matches = txt.match(pattern);
-// console.log(matches);
-
-//Zero or More Times(*)
-/*Zero or many times */
-// const pattern = /[a].*/gi;
-// const txt = "Apple and banana are fruits";
-// const matches = txt.match(pattern);
-// console.log(matches);
-
-//Zero or one times (?)
-// const txt =
-//   "I am not sure if there is a convention how to write the word e-mail.\
-// Some people write it email others may write it as Email or E-mail.";
-// const pattern = /[Ee]-?mail/g;
-// const matches = txt.match(pattern);
-// console.log(matches);
-
-//Quantifier in RegEx
-/*We can specify the length of the substring using curly brackets */
-// const txt = "This regular expression example was made in December 6,  2019.";
-// const pattern = /\b\w{4}\b/g;
-// const matches = txt.match(pattern);
-// console.log(matches);
-
-// const txt = "This regular expression example was made in December 6,  2019.";
-// const pattern = /\b[a-zA-Z]{4}\b/g;
-// const matches = txt.match(pattern);
-// console.log(matches);
-
-// const txt = "This regular expression example was made in December 6,  2019.";
-// const pattern = /\d{4}/g;
-// const matches = txt.match(pattern);
-// console.log(matches);
-
-// const txt = "This regular expression example was made in December 6,  2019.";
-// const pattern = /\d{1,4}/g;
-// const matches = txt.match(pattern);
-// console.log(matches);
-
-//Cart (^)
-// const txt = "This regular expression example was made in December 6,  2019.";
-// const pattern = /^This/g;
-// const matches = txt.match(pattern);
-// console.log(matches);
-
-// const txt = "This regular expression example was made in December 6,  2019.";
-// const pattern = /[^A-Za-z,. ]+/g; /*No letters, commas, or periods */
-// const matches = txt.match(pattern);
-// console.log(matches);
-/*Inside a set character, the cart character (^) means negation */
-
-//Exact Match
-// const txt = "This regular expression example was made in December 6,  2019.";
-// const pattern = /^[A-Z][a-z]{3,6}$/;
-// const name = "Asabeneh";
-// const result = pattern.test(name);
-// console.log(result);
+//console.count()
+/*console.count prints the number of times it is called */
+/*It takes a string as a label parameter */
+/*Helpful to count the number of times a function is called */
+const func = () => {
+  console.count("Function has been called");
+};
+func();
+func();
+func();
