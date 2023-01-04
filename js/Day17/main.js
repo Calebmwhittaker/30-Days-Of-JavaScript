@@ -77,5 +77,5 @@
 // console.log(skillsObj);
 
 //Clearing the localStorage
-localStorage.clear();
-console.log(localStorage);
+// localStorage.clear();
+// console.log(localStorage);
