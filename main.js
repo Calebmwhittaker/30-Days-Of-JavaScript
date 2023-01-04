@@ -42,3 +42,40 @@
     localStorage.getItem() => to display data stored in the localStorage; takes a key as a parameter
     localStorage.removeItem() => to remove stored item from a localStorage; takes a key as a parameter
     localStorage.key() => to display a data stored in a localStorage; takes an index as a parameter */
+
+//Setting Item to the LocalStorage
+/*When we set data to be stored in the local storage, it will be saved as a string */
+/*If we are storing an array or an object, we should stringify it first to keep the format otherwise, we lose the array structure or the object structure of the original data */
+// localStorage.setItem('key', 'value')
+// localStorage.setItem("firstName", "Caleb");
+// console.log(localStorage);
+// const skills = ["HTML", "CSS", "JS", "React"];
+// const skillsJSON = JSON.stringify(skills, undefined, 4);
+// localStorage.setItem("skills", skillsJSON);
+// console.log(localStorage);
+
+// const user = {
+//   firstName: "Caleb",
+//   age: 22,
+//   skills: ["HTML", "CSS", "JS", "React"],
+// };
+// const userJSON = JSON.stringify(user, undefined, 4);
+// localStorage.setItem("user", userJSON);
+// console.log(localStorage);
+
+//Getting Item from localStorage
+/*Use the localStorage.getItem() method */
+// localStorage.getItem('key')
+
+// let firstName = localStorage.getItem("firstName");
+// let age = localStorage.getItem("age");
+// let skills = localStorage.getItem("skills");
+// console.log(firstName, age, skills);
+
+// let skills = localStorage.getItem("skills");
+// let skillsObj = JSON.parse(skills);
+// console.log(skillsObj);
+
+//Clearing the localStorage
+localStorage.clear();
+console.log(localStorage);
