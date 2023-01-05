@@ -82,3 +82,26 @@ const catsAPI = "https://api.thecatapi.com/v1/breeds";
 //   console.log(largestTen);
 // };
 // fetchData();
+//3.
+// const fetchData = async () => {
+//   const response = await fetch(countriesAPI);
+//   const countries = await response.json();
+//   const json = JSON.stringify(countries, 4);
+//   const obj = JSON.parse(json);
+//   const languagesMap = new Map();
+//   for (const country of obj) {
+//     const languages = country.languages;
+//     for (const language of languages) {
+//       let { name } = language;
+//       if (!languagesMap.has(name)) {
+//         languagesMap.set(name, 1);
+//       } else {
+//         languagesMap.set(name, languagesMap.get(name) + 1);
+//       }
+//     }
+//   }
+//   console.log(
+//     `There are a total of ${languagesMap.size} languages in the world`
+//   );
+// };
+// fetchData();
