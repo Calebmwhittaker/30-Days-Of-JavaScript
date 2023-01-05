@@ -1,27 +1,22 @@
-//DAY 20 LESSON
-//JavaScript Style Guide
-/*A JavaScript style guid is a set of standards that tells how JavaScript code should be written and organized */
+//DAY 21 LESSON
+//Document Object Model (DOM)
+/*The HTML document is strucutred as a JavaScript Object */
+/*Every HTML element has different properties which can be helped to manipulate it */
+/*It's possinle to get, create, append, or remove HTML elements using JavaScript */
+/*To select an HTML element, we use the tag name, id, class name, or other attributes */
 
-//Why we need Style Guides
-/*Common JavaScript Style Guides:
-    Airbnb JSC
-    JavaScript Standard SC
-    Google JavaScript Style Guide */
+//Getting Element
+//Getting Elements by Tag Name
+/*getElementsByTagName(): Takes a tag name as a string parameter and returns an HTMLCollection Object; similar to an array of objects of HTML elements */
+/*The length property provides the size of the HTML collection */
+/*You can access inidividual elements using an index or looping through each individual item */
+/*The HTMLCollection does NOT support all array methods; therefore, we should use regular 'for loops' instead of 'forEach loops */
+// document.getElementsByTagName("h1");
+const allTitles = document.getElementsByTagName("h1");
 
-//Airbnb JavaScript Style Guide
-/*One of the most popular JavaScript style guides on the internet */
+console.log(allTitles); //Returns an HTMLCollection
+console.log(allTitles.length); //Returns the length of the HTMLCollection
 
-//Common Conventions for Writing Clean Code
-/*Conventions:
-    camelCase for variables and functions
-    ALL variable names start with a letter
-    Use of 'const' for constants, arrays, objects, or functions
-    Use of single quotes or backticks
-    Semicolons are not necessary and are of personal preference
-    Includes spaces around arithmetic operators, assignments and after commas
-    Use of arrow functions instead of function declarations
-    Use of explicit returns instead of implicit returns if a function is a one-liner
-    No trailing comma in the last value of an object
-    Use of the +=, -=, *=, /= **= instead of having to redeclare the variable
-    Print a tag string when using console.log() to know where the console is coming from
-    Array names are plural */
+for (let i = 0; i < allTitles.length; i++) {
+  console.log(allTitles[i]);
+}
