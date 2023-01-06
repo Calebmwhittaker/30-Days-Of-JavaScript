@@ -1,3 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+h2 {
+    margin: 5px 500px;
+}
+
+li {
+    margin: 5px 500px;
+}
+
 /* * {
     outline: 1px solid red;
     outline-offset: -1px;
