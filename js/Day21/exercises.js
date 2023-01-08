@@ -125,7 +125,7 @@
 //     case 11:
 //       month = "November";
 //       break;
-//     case 1:
+//     case 12:
 //       month = "December";
 //       break;
 

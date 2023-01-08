@@ -51,5 +51,5 @@
 //   ul.removeChild(list);
 // }
 
-const ul = document.querySelector("ul");
-ul.textContent = "";
+// const ul = document.querySelector("ul");
+// ul.textContent = "";
