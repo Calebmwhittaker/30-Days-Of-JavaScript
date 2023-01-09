@@ -102,6 +102,6 @@ onload - when the browser has finished loading a page*/
 // });
 
 //keypress, keydown, keyup
-document.body.addEventListener("keypress", (e) => {
-  alert(e.location);
-});
+// document.body.addEventListener("keypress", (e) => {
+//   alert(e.location);
+// });
