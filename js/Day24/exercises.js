@@ -25,7 +25,7 @@ let solarSystemArray = [
 ];
 for (const pair of solarSystemArray) {
   let { planet, gravity } = pair;
-  var option = document.createElement("option");
+  const option = document.createElement("option");
   option.setAttribute("value", gravity);
   option.textContent = planet;
   option.setAttribute("name", planet);
@@ -61,7 +61,7 @@ button.addEventListener("click", function e() {
   button.removeEventListener("click", e);
   p.textContent = `${
     input.value * solarSystemArray[select.selectedIndex].gravity
-  } (kg * m)/s^2`;
+  } N`;
   p.style.color = "white";
 });
 
