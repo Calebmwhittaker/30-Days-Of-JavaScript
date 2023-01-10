@@ -8,6 +8,29 @@ const fetchData = async () => {
   const json = JSON.stringify(data, undefined, 4);
   const countries = JSON.parse(json, undefined, 4);
 
+  let countriesArray = [];
+  for (const country of countries) {
+    let { population, languages, name } = country;
+    let { common } = name;
+    let languagesArray = [];
+    for (const language in languages) {
+      const newLanguage = languages[language];
+      languagesArray.push(newLanguage);
+    }
+    countriesArray.push({
+      name: common,
+      languages: languagesArray,
+      population: population,
+    });
+  }
+  const populationRanking = countriesArray.sort((a, b) =>
+    a.population < b.population ? 1 : -1
+  );
+  const tenMostPopulatedCountries = populationRanking.slice(0, 10);
+  // console.log(tenMostPopulatedCountries);
+
+  const countriesMap = new Map();
+
   //Header
   document.body.style.textAlign = "center";
   const header = document.createElement("header");
@@ -28,40 +51,37 @@ const fetchData = async () => {
   const populationButton = document.createElement("button");
   populationButton.textContent = "Population";
   populationButton.style.backgroundColor = "orange";
-  populationButton.addEventListener("click", function population() {
+  const dataSection = document.createElement("section");
+  dataSection.setAttribute("class", "row d-flex");
+  // dataSection.style.justifyContent = "space-around";
+  populationButton.addEventListener("click", function populationFunction() {
+    dataSection.textContent = "";
     p.textContent = "10 Most Populated Countries in the World";
+    for (const country of tenMostPopulatedCountries) {
+      const countryDiv = document.createElement("div");
+      countryDiv.setAttribute("class", "col-12 d-flex justify-content-around");
+      const nameDiv = document.createElement("div");
+      nameDiv.textContent = `${country.name}`;
+      const progressDiv = document.createElement("div");
+      const numberDiv = document.createElement("div");
+      numberDiv.textContent = `${country.population}`;
+      countryDiv.appendChild(nameDiv);
+      countryDiv.appendChild(progressDiv);
+      countryDiv.appendChild(numberDiv);
+      dataSection.appendChild(countryDiv);
+    }
+    document.body.appendChild(dataSection);
   });
   const languageButton = document.createElement("button");
   languageButton.textContent = "Languages";
   languageButton.style.backgroundColor = "orange";
   languageButton.addEventListener("click", function languages() {
     p.textContent = "10 Most Spoken Languages in the World";
+    dataSection.textContent = "";
   });
   document.body.appendChild(populationButton);
   document.body.appendChild(languageButton);
   document.body.appendChild(p);
   //Data Section
-  const dataSection = document.createElement("section");
-  let countriesArray = [];
-  for (const country of countries) {
-    let { population, languages, name } = country;
-    let { common } = name;
-    let languagesArray = [];
-    for (const language in languages) {
-      const newLanguage = languages[language];
-      languagesArray.push(newLanguage);
-    }
-    countriesArray.push({
-      name: common,
-      languages: languagesArray,
-      population: population,
-    });
-  }
-  const sortedArray = countriesArray.sort((item) => item.name);
-  console.log(sortedArray); //NOT Working Yet
-  const countryNamesDiv = document.createElement("div");
-  const countryProgressBar = document.createElement("progress");
-  const countryCountDiv = document.createElement("div");
-  document.body.appendChild(dataSection);
 };
 fetchData();
