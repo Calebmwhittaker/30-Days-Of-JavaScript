@@ -17,11 +17,14 @@ h2.textContent = "30DaysOfJavaScript Day 23";
 document.body.appendChild(h3);
 h3.textContent = "Author: Caleb Whittaker";
 
-document.body.appendChild(input);
 input.setAttribute("type", "text");
 input.setAttribute("id", "number");
 input.setAttribute("placeholder", "Type in a number");
-input.addEventListener("focus", removeNewRow);
+const p = document.createElement("p");
+input.addEventListener("focus", () => {
+  p.textContent = "";
+});
+document.body.appendChild(input);
 document.body.appendChild(button);
 button.textContent = "Generate Numbers";
 button.style.backgroundColor = "green";
@@ -39,7 +42,20 @@ const isPrime = (x) => {
   return true;
 };
 
+function inputBlur() {
+  p.textContent = "Please enter a number value";
+  p.style.color = "red";
+  if (newRow) {
+    newRow.before(p);
+  } else {
+    document.body.appendChild(p);
+  }
+}
+
 function clickEventHandler() {
+  if (input.value === "") {
+    inputBlur();
+  }
   newRow.style.margin = "20px auto";
   newRow.style.justifyContent = "space-around";
   const value = input.value;
@@ -66,10 +82,15 @@ function clickEventHandler() {
     newRow.setAttribute("class", "row");
     document.body.appendChild(newRow);
     button.removeEventListener("click", clickEventHandler);
+    input.addEventListener("focus", () => {
+      button.addEventListener("click", clickEventHandler);
+    });
+    input.addEventListener("focus", removeNewRow);
+  }
+  if (input.value === "" || !input.value.match(pattern)) {
+    inputBlur();
   }
 }
-
 function removeNewRow() {
-  newRow.remove();
-  button.addEventListener("click", clickEventHandler);
+  newRow.textContent = "";
 }
