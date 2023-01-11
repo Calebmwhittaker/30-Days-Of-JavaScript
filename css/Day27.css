@@ -1,23 +1,29 @@
+body {
+  margin: 50px 200px;
+}
+
 h1 {
-    font-size: 40px;
-    letter-spacing: 5px;
+  font-size: 60px;
+  letter-spacing: 5px;
+  margin-bottom: 50px;
 }
 
 #titles-div {
-    background-color: pink;
+  background-color: lightblue;
 }
 
 #materials {
-    display: flex;
-    justify-content: space-around;
-    margin: 20px 0;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
 }
 
 #teaching {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
 }
 
 .card:hover {
-    background-color: lightcoral;
+  background-color: lightblue;
 }
