@@ -1,0 +1,23 @@
+h1 {
+    font-size: 40px;
+    letter-spacing: 5px;
+}
+
+#titles-div {
+    background-color: pink;
+}
+
+#materials {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+#teaching {
+    display: flex;
+    justify-content: space-around;
+}
+
+.card:hover {
+    background-color: lightcoral;
+}
