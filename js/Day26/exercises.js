@@ -10,7 +10,6 @@ async function fetchData() {
   const header = document.createElement("header");
   const headerDiv = document.createElement("div");
   headerDiv.style.display = "inline-block";
-  //   headerDiv.style.height = "250px";
   header.style.backgroundImage = 'url("./js/Day26/images/globe.jpeg")';
   header.style.opacity = "85%";
   header.style.height = "600px";
@@ -46,6 +45,7 @@ async function fetchData() {
   headerDiv.appendChild(searchBarInput);
   const countriesSection = document.createElement("section");
   countriesSection.setAttribute("class", "row m-0 justify-content-around");
+
   let countriesArray = [];
   for (const country of countriesObj) {
     let { name } = country;
@@ -55,12 +55,36 @@ async function fetchData() {
   countriesArray.sort((a, b) => (a < b ? -1 : 1));
   for (const country of countriesArray) {
     const countryDiv = document.createElement("div");
-    countryDiv.setAttribute("class", "col-2 m-1");
+    countryDiv.setAttribute("class", "col-2 mx-1 card justify-content-center");
+    countryDiv.style.width = "180px";
+    countryDiv.style.height = "120px";
     countryDiv.textContent = `${country}`;
     countriesSection.appendChild(countryDiv);
   }
   document.body.appendChild(countriesSection);
+
+  searchBarInput.addEventListener("input", function changeCountries() {
+    const countriesSectionInput = document.createElement("section");
+    countriesSectionInput.setAttribute(
+      "class",
+      "row m-0 justify-content-around"
+    );
+    for (const country of countriesArray) {
+      if (country.match(this.value)) {
+        countriesSection.remove();
+        countriesSectionInput.remove();
+        const countryDiv = document.createElement("div");
+        countryDiv.setAttribute(
+          "class",
+          "col-2 mx-1 card justify-content-center"
+        );
+        countryDiv.style.width = "180px";
+        countryDiv.style.height = "120px";
+        countryDiv.textContent = `${country}`;
+        countriesSectionInput.appendChild(countryDiv);
+      }
+    }
+    document.body.appendChild(countriesSectionInput);
+  });
 }
 fetchData();
-
-//What is the difference between '=' and '==' in JavaScript?
