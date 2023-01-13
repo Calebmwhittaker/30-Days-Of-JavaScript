@@ -44,7 +44,7 @@ async function fetchData() {
   searchBarInput.style.marginTop = "20px";
   headerDiv.appendChild(searchBarInput);
   const countriesSection = document.createElement("section");
-  countriesSection.setAttribute("class", "row m-0 justify-content-around");
+  countriesSection.setAttribute("class", "row hi m-0 justify-content-around");
 
   let countriesArray = [];
   for (const country of countriesObj) {
@@ -69,21 +69,21 @@ async function fetchData() {
       "class",
       "row m-0 justify-content-around"
     );
-    for (const country of countriesArray) {
+    countriesArray.filter((country) => {
       if (country.match(this.value)) {
         countriesSection.remove();
         countriesSectionInput.remove();
-        const countryDiv = document.createElement("div");
-        countryDiv.setAttribute(
+        const countryP = document.createElement("p");
+        countryP.setAttribute(
           "class",
           "col-2 mx-1 card justify-content-center"
         );
-        countryDiv.style.width = "180px";
-        countryDiv.style.height = "120px";
-        countryDiv.textContent = `${country}`;
-        countriesSectionInput.appendChild(countryDiv);
+        countryP.style.width = "180px";
+        countryP.style.height = "120px";
+        countryP.textContent = `${country}`;
+        countriesSectionInput.appendChild(countryP);
       }
-    }
+    });
     document.body.appendChild(countriesSectionInput);
   });
 }
