@@ -1,5 +1,39 @@
+body {
+  text-align: center;
+}
+
 header {
   background: no-repeat center fixed;
   background-size: cover;
   margin-bottom: 30px;
+  display: flex;
+  background-image: url("../js/Day26/images/globe.jpeg");
+  opacity: 85%;
+  height: 600px;
+  align-items: center;
+  justify-content: center;
+}
+
+h1, h2{
+  color: white;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.country-div {
+  width: 180px;
+  height: 120px;
+}
+
+.hide {
+  display: none;
 }

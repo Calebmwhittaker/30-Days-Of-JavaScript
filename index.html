@@ -24,7 +24,22 @@
     <!-- <script src="https://use.fontawesome.com/cd8378d271.js"></script> -->
   </head>
   <body>
+    <header>
+      <div id="header-div">
+        <h1>WORLD COUNTRIES LIST</h1>
+        <h2></h2>
+        <button id="start-button">STARTING WORD</button>
+        <button id="search-any-button">SEARCH WITH ANY WORD</button>
+        <button id="flip-button">=></button>
+        <input type="text" placeholder="Enter a country name" />
+      </div>
+    </header>
+    <section
+      class="countries-container row m-0 justify-content-around"
+    ></section>
+    <template data-countries-template>
+      <div class="country-div card col-2 mx-1 justify-content-center"></div>
+    </template>
     <script src="js/Day26/exercises.js" type="module"></script>
-    <!-- <script src="main.js"></script> -->
   </body>
 </html>
