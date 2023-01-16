@@ -1,0 +1,31 @@
+body {
+    text-align: center;
+}
+
+.add-player {
+    background-color: rgb(214, 162, 171);
+    color: white;
+    border: none;
+}
+
+.user {
+    background-color: lightblue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+}
+
+.date {
+    font-size: 10px;
+    display: block;
+}
+
+.name {
+    width: 200px;
+}
+
+p {
+    color: red;
+}

@@ -2,6 +2,7 @@
 //LEVEL 1
 //1.
 const countriesTemplate = document.querySelector("[data-countries-template]");
+console.log(countriesTemplate);
 const countriesContainer = document.querySelector(".countries-container");
 const searchInput = document.querySelector("input");
 const startButton = document.querySelector("#start-button");

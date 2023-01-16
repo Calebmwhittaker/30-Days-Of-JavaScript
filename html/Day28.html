@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Leaderboard</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/Day28.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>30 Days Of JavaScript Challenge Leaderboard</h1>
+      <div class="inputs row justify-content-around m-4">
+        <input
+          class="first-name-input col-3"
+          type="text"
+          placeholder="First Name"
+          autocomplete="on"
+        />
+        <input
+          class="last-name-input col-3"
+          type="text"
+          placeholder="Last Name"
+          autocomplete="on"
+        />
+        <input
+          class="country-input col-2"
+          type="text"
+          placeholder="Ctry"
+          autocomplete="on"
+        />
+        <input
+          class="score-input col-2"
+          type="text"
+          placeholder="Score"
+          autocomplete="on"
+        />
+        <button class="add-player col-2">Add Player</button>
+      </div>
+    </header>
+    <main>
+      <section class="users-section"></section>
+      <template data-users-template>
+        <div class="user">
+          <div class="name">
+            <div class="first-name d-inline"></div>
+            <div class="last-name d-inline"></div>
+          </div>
+          <div class="date"></div>
+          <div class="country"></div>
+          <div class="score"></div>
+          <div class="buttons">
+            <button class="delete">Delete</button>
+            <button class="add-5">+5</button>
+            <button class="remove-5">-5</button>
+          </div>
+        </div>
+      </template>
+    </main>
+    <script src="js/Day28/exercises.js"></script>
+  </body>
+</html>
