@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/Day30.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>World Countries Data</h1>
+      <h2>Currently, we have</h2>
+    </header>
+    <main>
+      <input type="text" placeholder="Search Country" />
+      <div class="buttons">
+        <button class="name-button mx-1">Name</button>
+        <button class="capital-button mx-1">Capital</button>
+        <button class="population-button mx-1">Population</button>
+        <img class="graph" src="../js/Day30/images/graph.png" alt="graph" />
+      </div>
+      <section
+        class="countries-section row mt-4 justify-content-around"
+      ></section>
+      <template class="countries-card-template">
+        <div class="card col-2 p-3">
+          <div class="flag-div">
+            <img width="100px" class="flag-img" src="" alt="" />
+          </div>
+          <div class="name"></div>
+          <div class="capital"></div>
+          <div class="languages"></div>
+          <div class="population"></div>
+        </div>
+      </template>
+      <section class="data-section"></section>
+      <template class="graph-template">
+        <div class="data-buttons">
+          <button class="data-population-button">Population</button>
+          <button class="data-languages-button">Languages</button>
+        </div>
+        <p>World Population</p>
+        <div class="data-country-name"></div>
+        <div class="data-progress"></div>
+        <div class="data numbers"></div>
+      </template>
+    </main>
+    <script src="../js/Day30/exercises.js"></script>
+  </body>
+</html>

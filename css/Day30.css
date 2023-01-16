@@ -1,0 +1,33 @@
+body {
+    text-align: center;
+}
+
+.graph {
+    width: 30px;
+    height: 30px;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    margin: 10px 1px;
+}
+
+input {
+    width: 60%;
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: 15px;
+}
+
+.name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+}
