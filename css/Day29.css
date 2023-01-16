@@ -1,0 +1,10 @@
+div {
+    text-align: left;
+    font-size: 50px;
+    margin: 30px;
+}
+
+p {
+    display: inline-block;
+    margin: 5px;
+}
