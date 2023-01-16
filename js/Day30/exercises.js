@@ -1,17 +1,61 @@
 const countriesTemplate = document.querySelector(".countries-card-template");
 const graphTemplate = document.querySelector(".graph-template");
 const searchBar = document.querySelector("input");
+const nameButton = document.querySelector(".name-button");
+const capitlaButton = document.querySelector(".capital-button");
+const populationButton = document.querySelector(".population-button");
+
+let countriesArray = [];
+
+nameButton.addEventListener("click", () => {
+  searchBar.addEventListener("input", () => {
+    const value = searchBar.value.toLowerCase();
+    countriesArray.forEach((country) => {
+      const isVisible = country.name.toLowerCase().match(value);
+      country.element.classList.toggle("hide", !isVisible);
+    });
+  });
+});
+
+capitlaButton.addEventListener("click", () => {
+  searchBar.addEventListener("input", () => {
+    const value = searchBar.value.toLowerCase();
+    countriesArray.forEach((country) => {
+      if (country.capital) {
+        console.table(country.capital[0]);
+        const isVisible = country.capital[0].match(value);
+        if (isVisible) {
+          console.log(isVisible);
+        }
+        country.element.classList.toggle("hide", !isVisible);
+      }
+    });
+  });
+});
 
 try {
   fetch("https://restcountries.com/v3.1/all")
     .then((res) => res.json())
     .then((data) => {
-      data.map((country) => {
-        let { name, languages, population, capital, flags } = country;
-        let { common } = name;
-        let { png } = flags;
+      const h2 = document.querySelector("h2");
+      h2.textContent = `Currently, we have ${data.length} countries`;
 
-        const h2 = document.querySelector("h2");
+      countriesArray = data
+        .map((country) => {
+          let { name, languages, population, capital, flags } = country;
+          let { common } = name;
+          let { png } = flags;
+          return {
+            name: common,
+            languages: languages,
+            population: population,
+            capital: capital,
+            flags: png,
+          };
+        })
+        .sort((a, b) => (a.name > b.name ? 1 : -1));
+
+      countriesArray = countriesArray.map((country) => {
         const countriesSection =
           document.body.querySelector(".countries-section");
         const cloneCountries =
@@ -22,24 +66,20 @@ try {
         const countryCapital = cloneCountries.querySelector(".capital");
         const countryLanguages = cloneCountries.querySelector(".languages");
         const countryPopulation = cloneCountries.querySelector(".population");
-
         function getLanguagesOfEachCountry() {
           let languagesArray = [];
-          for (const language in languages) {
-            const newLanguage = languages[language];
+          for (const language in country.languages) {
+            const newLanguage = country.languages[language];
             languagesArray.push(newLanguage);
           }
           const joined = languagesArray.join(", ");
           return joined;
         }
-
-        h2.textContent = `Currently, we have ${data.length} countries`;
-
-        countryFlagImg.setAttribute("src", png);
-        countryFlagImg.setAttribute("alt", `Flag of the ${common}`);
-        countryName.textContent = common;
-        if (capital) {
-          countryCapital.textContent = `Capital: ${capital[0]}`;
+        countryFlagImg.setAttribute("src", country.flags);
+        countryFlagImg.setAttribute("alt", `Flag of the ${country.name}`);
+        countryName.textContent = country.name;
+        if (country.capital) {
+          countryCapital.textContent = `Capital: ${country.capital[0]}`;
         } else {
           countryCapital.textContent = `Capital: No Capital`;
         }
@@ -47,9 +87,16 @@ try {
         countryPopulation.textContent = `Population: ${Intl.NumberFormat(
           "en-US",
           { type: "decimal" }
-        ).format(population)}`;
+        ).format(country.population)}`;
 
         countriesSection.append(cloneCountries);
+        return {
+          name: country.name,
+          languages: country.languages,
+          capital: country.capital,
+          population: country.population,
+          element: cloneCountries,
+        };
       });
     });
 } catch (err) {
