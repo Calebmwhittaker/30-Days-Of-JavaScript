@@ -6,6 +6,7 @@ const capitalButton = document.querySelector(".capital-button");
 const populationButton = document.querySelector(".population-button");
 const graphImg = document.querySelector(".graph-img");
 const countriesSection = document.body.querySelector(".countries-section");
+const dataSection = document.querySelector(".data-section");
 
 let countriesArray = [];
 let order = false;
@@ -143,18 +144,24 @@ try {
       });
 
       graphImg.addEventListener("click", () => {
-        console.log("hello");
+        dataSection.classList.toggle("hide");
       });
       createCountryTemplate();
+      const graphTemplate = document.querySelector(".graph-template");
+      countriesArray.map((country) => {
+        const cloneData = graphTemplate.content.cloneNode(true).children[0];
+        const dataCountryName = cloneData.querySelector(".data-country-name");
+        const dataProgress = cloneData.querySelector(".data-progress");
+        const languageProgress =
+          dataProgress.querySelector(".language-progress");
+        const populationProgress = dataProgress.querySelector(
+          ".population-progress"
+        );
+        const dataNumbers = cloneData.querySelector(".data-numbers");
+
+        dataCountryName.textContent = country.name;
+      });
     });
-  const dataSection = document.querySelector(".data-section");
-  const graphTemplate = document.querySelector(".graph-template");
-  countriesArray = countriesArray.map((country) => {
-    const cloneData = graphTemplate.content.cloneNode(true).children[0];
-    const dataCountryName = cloneData.querySelector(".data-country-name");
-    const dataProgress = cloneData.querySelector(".data-progress");
-    const dataNumbers = cloneData.querySelector(".data-numbers");
-  });
 } catch (err) {
   console.log(err);
 }

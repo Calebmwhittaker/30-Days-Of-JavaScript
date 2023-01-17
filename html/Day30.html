@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
+    <title>World Countries</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
@@ -43,16 +43,24 @@
           <div class="population"></div>
         </div>
       </template>
-      <section class="data-section"></section>
+      <section class="data-section hide"></section>
       <template class="graph-template">
-        <div class="data-buttons">
-          <button class="data-population-button">Population</button>
-          <button class="data-languages-button">Languages</button>
+        <div class="data">
+          <div class="data-buttons">
+            <button class="data-population-button">Population</button>
+            <button class="data-languages-button">Languages</button>
+          </div>
+          <p>World Population</p>
+          <div class="data-country-name"></div>
+          <div class="data-progress">
+            <progress class="language-progress"></progress>
+            <progress class="population-progress"></progress>
+          </div>
+          <div class="data-numbers">
+            <div class="language-numbers"></div>
+            <div class="population-numbers"></div>
+          </div>
         </div>
-        <p>World Population</p>
-        <div class="data-country-name"></div>
-        <div class="data-progress"></div>
-        <div class="data-numbers"></div>
       </template>
     </main>
     <script src="../js/Day30/exercises.js"></script>

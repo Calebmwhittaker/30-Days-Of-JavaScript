@@ -1,47 +1,49 @@
 body {
-    text-align: center;
-    margin-top: 30px;
+  text-align: center;
+  margin-top: 30px;
 }
 
 .graph-img {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
 .buttons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.name-button:hover, .capital-button:hover, .population-button:hover, .graph-img:hover {
-    cursor: pointer;
+.name-button:hover,
+.capital-button:hover,
+.population-button:hover,
+.graph-img:hover {
+  cursor: pointer;
 }
-
 
 .card {
-    margin: 10px 1px;
+  margin: 10px 1px;
 }
 
 input {
-    width: 60%;
-    margin: 20px 0;
+  width: 60%;
+  margin: 20px 0;
 }
 
 h2 {
-    font-size: 15px;
+  font-size: 15px;
 }
 
 .name {
-    font-size: 18px;
-    font-weight: 600;
-    margin-top: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 10px;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
 .countries-section {
-    margin: 0 auto;
+  margin: 0 auto;
 }
