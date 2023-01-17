@@ -10,6 +10,25 @@ const countriesSection = document.body.querySelector(".countries-section");
 let countriesArray = [];
 let order = false;
 
+function sortCountries(argument) {
+  order = !order;
+  countriesArray.sort((a, b) => {
+    if (order) {
+      if (a[argument] > b[argument]) {
+        return -1;
+      } else {
+        return 1;
+      }
+    } else {
+      if (a[argument] > b[argument]) {
+        return 1;
+      } else {
+        return -1;
+      }
+    }
+  });
+}
+
 try {
   fetch("https://restcountries.com/v3.1/all")
     .then((res) => res.json())
@@ -54,11 +73,10 @@ try {
           }
 
           countryFlagImg.setAttribute("src", country.flags);
-          countryFlagImg.setAttribute("alt", `Flag of the ${country.name}`);
+          countryFlagImg.setAttribute("alt", `Flag of ${country.name}`);
           countryName.textContent = country.name;
           if (country.capital !== undefined) {
             countryCapital.textContent = `Capital: ${country.capital[0]}`;
-            country.capital = country.capital;
           } else {
             countryCapital.textContent = `Capital: No Capital`;
             country.capital = "No Capital";
@@ -83,22 +101,7 @@ try {
       }
 
       nameButton.addEventListener("click", () => {
-        order = !order;
-        countriesArray.sort((a, b) => {
-          if (order) {
-            if (a.name > b.name) {
-              return -1;
-            } else {
-              return 1;
-            }
-          } else {
-            if (a.name > b.name) {
-              return 1;
-            } else {
-              return -1;
-            }
-          }
-        });
+        sortCountries("name");
         for (let i = 0; i < countriesArray.length; i++) {
           countriesSection.removeChild(countriesSection.firstChild);
         }
@@ -113,22 +116,7 @@ try {
       });
 
       capitalButton.addEventListener("click", () => {
-        order = !order;
-        countriesArray.sort((a, b) => {
-          if (order) {
-            if (a.capital > b.capital) {
-              return -1;
-            } else {
-              return 1;
-            }
-          } else {
-            if (a.capital > b.capital) {
-              return 1;
-            } else {
-              return -1;
-            }
-          }
-        });
+        sortCountries("capital");
         for (let i = 0; i < countriesArray.length; i++) {
           countriesSection.removeChild(countriesSection.firstChild);
         }
@@ -159,6 +147,14 @@ try {
       });
       createCountryTemplate();
     });
+  const dataSection = document.querySelector(".data-section");
+  const graphTemplate = document.querySelector(".graph-template");
+  countriesArray = countriesArray.map((country) => {
+    const cloneData = graphTemplate.content.cloneNode(true).children[0];
+    const dataCountryName = cloneData.querySelector(".data-country-name");
+    const dataProgress = cloneData.querySelector(".data-progress");
+    const dataNumbers = cloneData.querySelector(".data-numbers");
+  });
 } catch (err) {
   console.log(err);
 }
