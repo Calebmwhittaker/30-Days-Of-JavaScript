@@ -7,6 +7,8 @@ const populationButton = document.querySelector(".population-button");
 const graphImg = document.querySelector(".graph-img");
 const countriesSection = document.body.querySelector(".countries-section");
 const dataSection = document.querySelector(".data-section");
+const dataPopulationButton = document.querySelector(".data-population-button");
+const dataLanguagesButton = document.querySelector(".data-languages-button");
 
 let countriesArray = [];
 let order = false;
@@ -63,6 +65,22 @@ try {
           const countryLanguages = cloneCountries.querySelector(".languages");
           const countryPopulation = cloneCountries.querySelector(".population");
 
+          const graphTemplate = document.querySelector(".graph-template");
+          const cloneData = graphTemplate.content.cloneNode(true).children[0];
+          const dataCountryName = cloneData.querySelector(".data-country-name");
+          const dataProgress = cloneData.querySelector(".data-progress");
+          const languageProgress =
+            dataProgress.querySelector(".language-progress");
+          const populationProgress = dataProgress.querySelector(
+            ".population-progress"
+          );
+          const dataNumbers = cloneData.querySelector(".data-numbers");
+          const languageNumbers =
+            dataNumbers.querySelector(".language-numbers");
+          const populationNumbers = dataNumbers.querySelector(
+            ".population-numbers"
+          );
+
           function getLanguagesOfEachCountry() {
             let languagesArray = [];
             for (const language in country.languages) {
@@ -88,7 +106,37 @@ try {
             { type: "decimal" }
           ).format(country.population)}`;
 
+          dataCountryName.textContent = country.name;
+          languageProgress.setAttribute("value", splitLanguages().length);
+          languageProgress.setAttribute("max", 15);
+          populationProgress.setAttribute("value", country.population);
+          populationProgress.setAttribute("max", 7888000000);
+
+          dataPopulationButton.addEventListener("click", () => {
+            languageProgress.classList.add("hide");
+            languageNumbers.classList.add("hide");
+            populationProgress.classList.remove("hide");
+            populationNumbers.classList.remove("hide");
+          });
+
+          dataLanguagesButton.addEventListener("click", () => {
+            populationProgress.classList.add("hide");
+            populationNumbers.classList.add("hide");
+            languageProgress.classList.remove("hide");
+            languageNumbers.classList.remove("hide");
+          });
+
+          function splitLanguages() {
+            const splitLang = getLanguagesOfEachCountry().split(", ");
+            return splitLang;
+          }
+          languageNumbers.textContent = splitLanguages().length;
+          populationNumbers.textContent = Intl.NumberFormat("en-US", {
+            type: "decimal",
+          }).format(country.population);
+
           countriesSection.appendChild(cloneCountries);
+          dataSection.appendChild(cloneData);
 
           return {
             name: country.name,
@@ -97,6 +145,7 @@ try {
             population: country.population,
             flags: country.flags,
             element: cloneCountries,
+            elementData: cloneData,
           };
         });
       }
@@ -105,13 +154,15 @@ try {
         sortCountries("name");
         for (let i = 0; i < countriesArray.length; i++) {
           countriesSection.removeChild(countriesSection.firstChild);
+          dataSection.removeChild(dataSection.lastChild);
         }
         createCountryTemplate();
         searchBar.addEventListener("input", () => {
           const value = searchBar.value.toLowerCase();
           countriesArray.forEach((country) => {
-            const isVisible = country.name.toLowerCase().match(value);
-            country.element.classList.toggle("hide", !isVisible);
+            const isVisibleName = country.name.toLowerCase().match(value);
+            country.element.classList.toggle("hide", !isVisibleName);
+            country.elementData.classList.toggle("hide", !isVisibleName);
           });
         });
       });
@@ -120,19 +171,24 @@ try {
         sortCountries("capital");
         for (let i = 0; i < countriesArray.length; i++) {
           countriesSection.removeChild(countriesSection.firstChild);
+          dataSection.removeChild(dataSection.lastChild);
         }
         createCountryTemplate();
         searchBar.addEventListener("input", () => {
           const value = searchBar.value.toLowerCase();
           countriesArray.forEach((country) => {
             const stringCapital = country.capital.toString();
-            const isVisible = stringCapital.toLowerCase().match(value);
-            country.element.classList.toggle("hide", !isVisible);
+            const isVisibleName = stringCapital.toLowerCase().match(value);
+            country.element.classList.toggle("hide", !isVisibleName);
+            country.elementData.classList.toggle("hide", !isVisibleName);
           });
         });
       });
 
       populationButton.addEventListener("click", () => {
+        for (let i = 0; i < countriesArray.length; i++) {
+          dataSection.removeChild(dataSection.lastChild);
+        }
         order = !order;
         countriesArray.sort((a, b) =>
           order ? b.population - a.population : a.population - b.population
@@ -146,21 +202,8 @@ try {
       graphImg.addEventListener("click", () => {
         dataSection.classList.toggle("hide");
       });
-      createCountryTemplate();
-      const graphTemplate = document.querySelector(".graph-template");
-      countriesArray.map((country) => {
-        const cloneData = graphTemplate.content.cloneNode(true).children[0];
-        const dataCountryName = cloneData.querySelector(".data-country-name");
-        const dataProgress = cloneData.querySelector(".data-progress");
-        const languageProgress =
-          dataProgress.querySelector(".language-progress");
-        const populationProgress = dataProgress.querySelector(
-          ".population-progress"
-        );
-        const dataNumbers = cloneData.querySelector(".data-numbers");
 
-        dataCountryName.textContent = country.name;
-      });
+      createCountryTemplate();
     });
 } catch (err) {
   console.log(err);

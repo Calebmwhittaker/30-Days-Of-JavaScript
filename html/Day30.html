@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>World Countries</title>
-    <meta name="description" content="" />
+    <meta name="description" content="World Countries Data" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
@@ -43,22 +43,23 @@
           <div class="population"></div>
         </div>
       </template>
-      <section class="data-section hide"></section>
+      <section class="data-section hide">
+        <div class="data-buttons">
+          <button class="data-population-button">Population</button>
+          <button class="data-languages-button">Languages</button>
+        </div>
+        <p>World Population</p>
+      </section>
       <template class="graph-template">
-        <div class="data">
-          <div class="data-buttons">
-            <button class="data-population-button">Population</button>
-            <button class="data-languages-button">Languages</button>
-          </div>
-          <p>World Population</p>
-          <div class="data-country-name"></div>
-          <div class="data-progress">
+        <div class="data row">
+          <div class="data-country-name col-4"></div>
+          <div class="data-progress col-4">
             <progress class="language-progress"></progress>
-            <progress class="population-progress"></progress>
+            <progress class="population-progress hide"></progress>
           </div>
-          <div class="data-numbers">
+          <div class="data-numbers col-4">
             <div class="language-numbers"></div>
-            <div class="population-numbers"></div>
+            <div class="population-numbers hide"></div>
           </div>
         </div>
       </template>
