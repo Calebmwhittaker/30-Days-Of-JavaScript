@@ -1,0 +1,55 @@
+body {
+    text-align: center;
+    margin: 20px;
+}
+
+label {
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    text-align: left;
+    margin-left: 6px;
+}
+
+input {
+    width: 39rem;
+    height: 40px;
+    border-radius: 5px;
+}
+
+div {
+    margin: 20px;
+    width: 40rem;
+    overflow: hidden;
+    margin: 20px auto;
+}
+
+button {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 20rem;
+    height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+p {
+    color: red;
+}
+
+form {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+h1 {
+    margin: 30px;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+.hide {
+    display: none;
+}

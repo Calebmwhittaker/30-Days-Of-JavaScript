@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Regex Validation</title>
+    <meta name="description" content="Regex Validation" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/Day30B.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <h1>Validating Web Forms</h1>
+    <form class="container">
+      <div class="first-name">
+        <label for="first-name">First Name</label>
+        <input
+          required
+          type="text"
+          name="first-name"
+          id="first-name"
+          pattern="^[\w\d]{3,16}"
+          autocomplete="on"
+        />
+        <p class="first-name-paragraph hide">
+          First name must be alphanumeric and contain 3 - 16 character
+        </p>
+      </div>
+      <div class="last-name">
+        <label for="last-name">Last Name</label>
+        <input
+          required
+          type="text"
+          name="last-name"
+          id="last-name"
+          pattern="^[\w\d]{3,16}"
+          autocomplete="on"
+        />
+        <p class="last-name-paragraph hide">
+          Last name must be alphanumeric and contain 3 - 16 characters
+        </p>
+      </div>
+      <div class="email">
+        <label for="email">Email</label>
+        <input
+          required
+          type="email"
+          name="email"
+          id="email"
+          pattern="^[\w\d]{3,16}@[\w]{3,10}\.com"
+          autocomplete="on"
+        />
+        <p class="email-paragraph hide">
+          Email must be a valid address, e.g. example@example.com
+        </p>
+      </div>
+      <div class="password">
+        <label for="password">Password</label>
+        <input
+          required
+          type="password"
+          name="password"
+          id="password"
+          pattern="^[\w\d@,_-]{6,20}$"
+          autocomplete="off"
+        />
+        <p class="password-paragraph hide">
+          Password must be alphanumeric (@,_ and - are also allowed) and between
+          6 - 20 characters
+        </p>
+      </div>
+      <div class="phone">
+        <label for="phone">Phone Number</label>
+        <input
+          required
+          type="tel"
+          name="phone"
+          id="phone"
+          pattern="^\d{3}-\d{3}-\d{4}"
+          autocomplete="on"
+        />
+        <p class="phone-paragraph hide">
+          A valid telephone number (10 digits e.g. 123-456-7890)
+        </p>
+      </div>
+      <div class="bio">
+        <label for="bio">Bio</label>
+        <input
+          required
+          type="text"
+          name="bio"
+          id="bio"
+          pattern="^[a-z_ -]{8,50}$"
+          autocomplete="off"
+        />
+        <p class="bio-paragraph hide">
+          Bio must contain only lowercase letters, underscores, hyphens and be 8
+          - 50 characters
+        </p>
+      </div>
+      <button type="submit" class="btn-dark">Submit</button>
+    </form>
+    <script src="../js/Day30/exercisesB.js"></script>
+  </body>
+</html>
